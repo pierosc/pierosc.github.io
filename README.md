@@ -1,6 +1,8 @@
 # Star Wars · El legado de la Fuerza
 
-Experiencia web cinematográfica en formato de diapositivas que recorre los Episodios I al VI e integra *The Clone Wars*, *Obi-Wan Kenobi* y *Star Wars Rebels* en una sola línea temporal.
+Sitio publicado: [pierosc.github.io](https://pierosc.github.io/)
+
+Experiencia web cinematográfica de 29 archivos narrativos que explica los Episodios I al VI e integra *The Clone Wars*, *Obi-Wan Kenobi* y *Star Wars Rebels* en una sola línea temporal. Rex y Ahsoka cuentan con archivos prioritarios dedicados a sus historias.
 
 ## Controles
 
@@ -19,4 +21,16 @@ Las nueve escenas usan fotografías espaciales de [Unsplash](https://unsplash.co
 npm install
 npm run dev
 npm test
+```
+
+## Docker
+
+```bash
+docker compose up -d --build
+```
+
+La experiencia queda disponible en `http://localhost:8080`. Para detenerla:
+
+```bash
+docker compose down
 ```

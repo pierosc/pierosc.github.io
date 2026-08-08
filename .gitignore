@@ -39,6 +39,7 @@ dev-server.err
 .vercel
 
 /dist/
+/pages-out/
 /.wrangler/
 /outputs/
 /work/

@@ -1,0 +1,9 @@
+services:
+  star-wars:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: star-wars-diapo
+    ports:
+      - "8080:3000"
+    restart: unless-stopped

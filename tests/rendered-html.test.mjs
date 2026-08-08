@@ -25,6 +25,12 @@ test("renderiza la experiencia cinematográfica", async () => {
   assert.match(html, /The Clone Wars/i);
   assert.match(html, /Obi-Wan Kenobi/i);
   assert.match(html, /Star Wars Rebels/i);
-  assert.match(html, /El retorno del Jedi/i);
+  assert.match(html, /La redención de Anakin/i);
+  assert.match(html, /Rex aprende a elegir/i);
+  assert.match(html, /Ahsoka deja la Orden/i);
+  assert.match(html, /Ahsoka y Rex sobreviven/i);
+  assert.match(html, /Ahsoka descubre a Vader/i);
+  assert.match(html, /Rex vuelve a la lucha/i);
+  assert.match(html, /La Orden 66/i);
   assert.doesNotMatch(html, /codex-preview|loading skeleton|react-loading-skeleton/i);
 });
