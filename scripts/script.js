@@ -72,117 +72,105 @@ social.addEventListener("click", () =>{
 
 
 
-//PROJECT GALLERY MENU//
+//PROJECT GALLERY//
+const projectTrack = document.getElementById("project-track");
+const projectCards = Array.from(document.querySelectorAll(".project-card"));
+const projectFilters = Array.from(document.querySelectorAll(".project-filter"));
+const previousProject = document.querySelector(".project-nav--previous");
+const nextProject = document.querySelector(".project-nav--next");
+const currentProject = document.getElementById("project-current");
+const totalProjects = document.getElementById("project-total");
+const projectStatus = document.getElementById("project-status");
 
-var cont = document.querySelector(".img-cont");
-var cont2 = document.querySelector(".img-cont2");
-var cont3 = document.querySelector(".img-cont3");
-var cont4 = document.querySelector(".img-cont4");
-var cont5 = document.querySelector(".img-cont5");
+const visibleProjectCards = () => projectCards.filter((card) => !card.hidden);
 
-var web = document.getElementById("web-box");
-var elect = document.getElementById("electronic-box");
-var print = document.getElementById("3d-box");
-var app = document.getElementById("app-box");
+const updateProjectNavigation = () => {
+  const visibleCards = visibleProjectCards();
+  const maxScroll = Math.max(0, projectTrack.scrollWidth - projectTrack.clientWidth);
+  const firstCard = visibleCards[0];
+  const gap = parseFloat(getComputedStyle(projectTrack).columnGap) || 24;
+  const step = firstCard ? firstCard.getBoundingClientRect().width + gap : 1;
+  const position = Math.min(visibleCards.length, Math.round(projectTrack.scrollLeft / step) + 1);
 
-var allmenu = document.querySelector(".project-menu .icon-box");
-
-function allcontoff (){
-  cont.style.transform = "scale(0)";
-  setTimeout(() => {
-    cont.style.display = "none";
-  }, 400);
-  cont2.style.transform = "scale(0)";
-  setTimeout(() => {
-    cont2.style.display = "none";
-  }, 400);
-  cont3.style.transform = "scale(0)";
-  setTimeout(() => {
-    cont3.style.display = "none";
-  }, 400);
-  cont4.style.transform = "scale(0)";
-  setTimeout(() => {
-    cont4.style.display = "none";
-  }, 400);
-  cont5.style.transform = "scale(0)";
-  setTimeout(() => {
-    cont5.style.display = "none";
-  }, 400);
-};
-function allclassoff(){
-  web.className= "pro";
-  elect.className= "pro";
-  print.className= "pro";
-  app.className= "pro";
+  currentProject.textContent = String(position || 0).padStart(2, "0");
+  totalProjects.textContent = String(visibleCards.length).padStart(2, "0");
+  previousProject.disabled = projectTrack.scrollLeft <= 2;
+  nextProject.disabled = projectTrack.scrollLeft >= maxScroll - 2 || maxScroll === 0;
 };
 
-web.addEventListener("click", () =>{
+const scrollProjects = (direction) => {
+  const firstCard = visibleProjectCards()[0];
+  if (!firstCard) return;
 
-  allcontoff();
+  const gap = parseFloat(getComputedStyle(projectTrack).columnGap) || 24;
+  projectTrack.scrollBy({
+    left: direction * (firstCard.getBoundingClientRect().width + gap),
+    behavior: "smooth",
+  });
+};
 
-  setTimeout(() => {
-  cont.style.display = "flex";
-  }, 400);
-  setTimeout(() => {
-    cont.style.transform = "scale(1)";
-  }, 500); 
+projectFilters.forEach((filterButton) => {
+  filterButton.addEventListener("click", () => {
+    const selectedFilter = filterButton.dataset.projectFilter;
 
-  allclassoff();
+    projectFilters.forEach((button) => {
+      const isActive = button === filterButton;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
 
-  web.className= "pro-active";
-  
-})
+    projectCards.forEach((card) => {
+      card.hidden = selectedFilter !== "all" && card.dataset.projectCategory !== selectedFilter;
+    });
 
-elect.addEventListener("click", () =>{
+    const label = filterButton.textContent.trim();
+    projectStatus.textContent = selectedFilter === "all" ? "Showing all projects" : `Showing ${label} projects`;
+    projectTrack.scrollTo({ left: 0, behavior: "smooth" });
+    requestAnimationFrame(updateProjectNavigation);
+  });
+});
 
-  allcontoff();
+previousProject.addEventListener("click", () => scrollProjects(-1));
+nextProject.addEventListener("click", () => scrollProjects(1));
+projectTrack.addEventListener("scroll", updateProjectNavigation, { passive: true });
+window.addEventListener("resize", updateProjectNavigation);
 
-  setTimeout(() => {
-  cont2.style.display = "flex";
-  }, 400);
-  setTimeout(() => {
-    cont2.style.transform = "scale(1)";
-  }, 500); 
- 
-  allclassoff();
+projectTrack.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+    event.preventDefault();
+    scrollProjects(event.key === "ArrowLeft" ? -1 : 1);
+  }
+});
 
-  elect.className= "pro-active"; 
- 
-})
+let isProjectDragging = false;
+let projectDragStart = 0;
+let projectScrollStart = 0;
 
-print.addEventListener("click", () =>{
+projectTrack.addEventListener("pointerdown", (event) => {
+  if (event.pointerType !== "mouse" || event.button !== 0) return;
+  isProjectDragging = true;
+  projectDragStart = event.clientX;
+  projectScrollStart = projectTrack.scrollLeft;
+  projectTrack.classList.add("is-dragging");
+  projectTrack.setPointerCapture(event.pointerId);
+});
 
-  allcontoff();
+projectTrack.addEventListener("pointermove", (event) => {
+  if (!isProjectDragging) return;
+  projectTrack.scrollLeft = projectScrollStart - (event.clientX - projectDragStart);
+});
 
-  setTimeout(() => {
-  cont3.style.display = "flex";
-  }, 400);
-  setTimeout(() => {
-    cont3.style.transform = "scale(1)";
-  }, 500); 
- 
-  allclassoff();
+const stopProjectDragging = (event) => {
+  if (!isProjectDragging) return;
+  isProjectDragging = false;
+  projectTrack.classList.remove("is-dragging");
+  if (projectTrack.hasPointerCapture(event.pointerId)) projectTrack.releasePointerCapture(event.pointerId);
+  updateProjectNavigation();
+};
 
-  print.className= "pro-active"; 
- 
-})
-
-app.addEventListener("click", () =>{
-
-  allcontoff();
-
-  setTimeout(() => {
-  cont4.style.display = "flex";
-  }, 400);
-  setTimeout(() => {
-    cont4.style.transform = "scale(1)";
-  }, 500); 
- 
-  allclassoff();
-
-  app.className= "pro-active"; 
- 
-})
+projectTrack.addEventListener("pointerup", stopProjectDragging);
+projectTrack.addEventListener("pointercancel", stopProjectDragging);
+updateProjectNavigation();
 
 
 
@@ -322,9 +310,8 @@ ScrollReveal().reveal('.knowledge h1', {delay: 500});
 ScrollReveal().reveal('.knowledge h2', {delay: 500});
 ScrollReveal().reveal('.about-me .icons .icon-box', { interval: 200, reset: true });
 //projects
-ScrollReveal().reveal('.project-title', {delay: 500});
-ScrollReveal().reveal('.pro-active', {delay: 500});
-ScrollReveal().reveal('.pro', {interval: 300});
-ScrollReveal().reveal('.img-cont .img-box', {interval: 400, reset: true });
+ScrollReveal().reveal('.projects-header', {delay: 250});
+ScrollReveal().reveal('.project-filter', {interval: 90});
+ScrollReveal().reveal('.project-card', {interval: 120});
 //certificates
 //ScrollReveal().reveal('.certificates', {delay: 500});

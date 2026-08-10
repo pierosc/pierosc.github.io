@@ -142,140 +142,170 @@
         </section>
         
         <!-- PROJECTS -->
-        <section class="projects" >
-            <div class="project-title" id="projects">
-                <h2>My projects</h2>
+        <section class="projects" id="projects" aria-labelledby="projects-title">
+            <div class="projects-header">
+                <p class="section-kicker">Selected work</p>
+                <h2 id="projects-title">My projects</h2>
+                <p class="projects-intro">A selection of software, electronics and product-development work, from early concepts to functional prototypes.</p>
             </div>
-            <!--Iconos del menu-->
-            <div class="project-menu">
-                <div id="web-box" class="pro-active">
-                    <span class="iconify" data-icon="mdi:web"></span>                   <!--web project-->
-                </div>
-                <div id="app-box" class="pro">
-                    <span class="iconify" data-icon="fluent:app-recent-20-regular"></span>        <!--App project-->
-                </div>
-                <div id="electronic-box" class="pro">
-                    <span class="iconify" data-icon="wpf:integrated-circuit"></span>        <!--electronic programming-->
-                </div>
-                <div id="3d-box" class="pro" id="icon-cad">
-                    <span class="iconify" data-icon="bx:bx-cube"></span>                    <!--3d design-->
-                </div>
+
+            <div class="project-menu" role="group" aria-label="Filter projects by category">
+                <button class="project-filter is-active" type="button" data-project-filter="all" aria-pressed="true">
+                    <span class="iconify" data-icon="mdi:view-grid-outline" aria-hidden="true"></span>
+                    <span>All</span>
+                </button>
+                <button class="project-filter" type="button" data-project-filter="web" aria-pressed="false">
+                    <span class="iconify" data-icon="mdi:web" aria-hidden="true"></span>
+                    <span>Web</span>
+                </button>
+                <button class="project-filter" type="button" data-project-filter="electronics" aria-pressed="false">
+                    <span class="iconify" data-icon="wpf:integrated-circuit" aria-hidden="true"></span>
+                    <span>Electronics</span>
+                </button>
+                <button class="project-filter" type="button" data-project-filter="printing" aria-pressed="false">
+                    <span class="iconify" data-icon="mdi:printer-3d-nozzle" aria-hidden="true"></span>
+                    <span>3D Print</span>
+                </button>
+                <button class="project-filter" type="button" data-project-filter="cad" aria-pressed="false">
+                    <span class="iconify" data-icon="bx:bx-cube" aria-hidden="true"></span>
+                    <span>CAD</span>
+                </button>
             </div>
-            <!--Galeria-->
-            <div class="project-img">
 
-                <!--WEB-->
-                <div class="img-cont">
-                    <div class="img-box">
-                        <div class="img-card clickable">
-                            <img id="project-img" src="multimedia/images/projects/web/Lunchpad.jpeg">
-                            <div class="img-txt">
-                                <h3>Lunchpad</h3>
-                                <h4>Musical program</h4>
-                            </div>
+            <div class="project-carousel">
+                <button class="project-nav project-nav--previous" type="button" aria-label="Previous project">
+                    <span class="iconify" data-icon="mdi:chevron-left" aria-hidden="true"></span>
+                </button>
+
+                <div class="project-track" id="project-track" tabindex="0" aria-label="Project gallery">
+                    <article class="project-card" data-project-category="web">
+                        <div class="project-card__media">
+                            <img src="multimedia/images/projects/web/Lunchpad.jpeg" alt="Lunchpad musical web interface" loading="lazy" decoding="async" draggable="false">
+                            <span class="project-card__number">01</span>
                         </div>
-                    </div>
-                    <div class="img-box">
-                        <div class="img-card">
-                            <img id="project-img" src="multimedia/images/projects/project1.jpg">
+                        <div class="project-card__body">
+                            <p class="project-card__category">Web development</p>
+                            <h3>Lunchpad</h3>
+                            <p>An interactive browser instrument designed around a focused, tactile interface.</p>
+                            <div class="project-card__tags"><span>JavaScript</span><span>Audio UI</span></div>
                         </div>
-                    </div>
-                    <div class="img-box">
-                        <div class="img-card">
-                            <img id="project-img" src="multimedia/images/projects/project1.jpg">
+                    </article>
+
+                    <article class="project-card" data-project-category="electronics">
+                        <div class="project-card__media">
+                            <img src="multimedia/images/projects/project1.jpg" alt="Electronics and mechanical control prototype" loading="lazy" decoding="async" draggable="false">
+                            <span class="project-card__number">02</span>
                         </div>
-                    </div>
+                        <div class="project-card__body">
+                            <p class="project-card__category">Electronics</p>
+                            <h3>Control prototype</h3>
+                            <p>A hands-on electromechanical prototype built for control, testing and iteration.</p>
+                            <div class="project-card__tags"><span>Prototyping</span><span>Hardware</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-project-category="printing">
+                        <div class="project-card__media">
+                            <img src="multimedia/images/projects/print/project1.jpg" alt="First 3D printed functional prototype" loading="lazy" decoding="async" draggable="false">
+                            <span class="project-card__number">03</span>
+                        </div>
+                        <div class="project-card__body">
+                            <p class="project-card__category">3D printing</p>
+                            <h3>Functional prototype</h3>
+                            <p>A rapid printed iteration used to validate dimensions, fit and physical form.</p>
+                            <div class="project-card__tags"><span>FDM</span><span>Iteration</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-project-category="printing">
+                        <div class="project-card__media">
+                            <img src="multimedia/images/projects/print/project2.jpeg" alt="Compact 3D printed enclosure" loading="lazy" decoding="async" draggable="false">
+                            <span class="project-card__number">04</span>
+                        </div>
+                        <div class="project-card__body">
+                            <p class="project-card__category">3D printing</p>
+                            <h3>Enclosure study</h3>
+                            <p>A compact enclosure developed through successive print-and-test cycles.</p>
+                            <div class="project-card__tags"><span>Enclosure</span><span>Fit test</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-project-category="printing">
+                        <div class="project-card__media">
+                            <img src="multimedia/images/projects/print/project3.jpeg" alt="3D printed mechanical component" loading="lazy" decoding="async" draggable="false">
+                            <span class="project-card__number">05</span>
+                        </div>
+                        <div class="project-card__body">
+                            <p class="project-card__category">3D printing</p>
+                            <h3>Mechanical component</h3>
+                            <p>A functional component optimized for practical fabrication and assembly.</p>
+                            <div class="project-card__tags"><span>Fabrication</span><span>Assembly</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-project-category="printing">
+                        <div class="project-card__media">
+                            <img src="multimedia/images/projects/print/project4.jpg" alt="Large-format 3D printed assembly" loading="lazy" decoding="async" draggable="false">
+                            <span class="project-card__number">06</span>
+                        </div>
+                        <div class="project-card__body">
+                            <p class="project-card__category">3D printing</p>
+                            <h3>Assembly prototype</h3>
+                            <p>A large-format print created to evaluate geometry, rigidity and real-world use.</p>
+                            <div class="project-card__tags"><span>Large format</span><span>Validation</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-project-category="printing">
+                        <div class="project-card__media">
+                            <img src="multimedia/images/projects/print/project5.jpg" alt="Series of 3D printed prototype iterations" loading="lazy" decoding="async" draggable="false">
+                            <span class="project-card__number">07</span>
+                        </div>
+                        <div class="project-card__body">
+                            <p class="project-card__category">3D printing</p>
+                            <h3>Iteration set</h3>
+                            <p>A prototype series used to refine tolerances and improve final assembly.</p>
+                            <div class="project-card__tags"><span>Tolerances</span><span>Refinement</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-project-category="cad">
+                        <div class="project-card__media">
+                            <img src="multimedia/images/projects/cad/project6.jpeg" alt="CAD model of a mechanical mechanism" loading="lazy" decoding="async" draggable="false">
+                            <span class="project-card__number">08</span>
+                        </div>
+                        <div class="project-card__body">
+                            <p class="project-card__category">CAD design</p>
+                            <h3>Mechanical study</h3>
+                            <p>A three-dimensional mechanism study focused on form, fit and manufacturability.</p>
+                            <div class="project-card__tags"><span>3D CAD</span><span>Mechanism</span></div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-project-category="cad">
+                        <div class="project-card__media">
+                            <img src="multimedia/images/projects/cad/project7.jpeg" alt="Parametric CAD component for an assembly" loading="lazy" decoding="async" draggable="false">
+                            <span class="project-card__number">09</span>
+                        </div>
+                        <div class="project-card__body">
+                            <p class="project-card__category">CAD design</p>
+                            <h3>Parametric component</h3>
+                            <p>A precision component modeled for integration within an electromechanical assembly.</p>
+                            <div class="project-card__tags"><span>Parametric</span><span>Engineering</span></div>
+                        </div>
+                    </article>
                 </div>
 
-                <!--ELECTRONICS-->
-                <div class="img-cont2">
-                    <div class="img-box">
-                        <div class="img-card clickable">
-                            <img id="project-img" src="multimedia/images/projects/project1.jpg">
-                            <div class="img-txt">
-                                <h3>Soporte de incubadora:</h3>
-                                <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut dolore placeat molestiae alias ipsa et!</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="img-box">
-                        <div class="img-card">
-                            <img id="project-img" src="multimedia/images/projects/cad/project7.jpeg">
-                        </div>
-                    </div>
-                </div>
-
-                <!--PRINT-->
-                <div class="img-cont3">
-                    <div class="img-box">
-                        <div class="img-card clickable">
-                            <img id="project-img" src="multimedia/images/projects/print/project1.jpg">
-                            <div class="img-txt">
-                                <h3>Soporte de incubadora:</h3>
-                                <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut dolore placeat molestiae alias ipsa et!</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="img-box">
-                        <div class="img-card">
-                            <img id="project-img" src="multimedia/images/projects/print/project2.jpeg">
-                        </div>
-                    </div>
-                    <div class="img-box">
-                        <div class="img-card">
-                            <img id="project-img" src="multimedia/images/projects/print/project3.jpeg">
-                        </div>
-                    </div>
-                    <div class="img-box">
-                        <div class="img-card">
-                            <img id="project-img" src="multimedia/images/projects/print/project4.jpg">
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <!--CAD-->
-                <div class="img-cont4">
-                    <div class="img-box">
-                        <div class="img-card clickable">
-                            <img id="project-img" src="multimedia/images/projects/cad/project6.jpeg">
-                            <div class="img-txt">
-                                <h3>Soporte de incubadora:</h3>
-                                <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut dolore placeat molestiae alias ipsa et!</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="img-box">
-                        <div class="img-card">
-                            <img id="project-img" src="multimedia/images/projects/cad/project7.jpeg">
-                        </div>
-                    </div>
-                </div>
-
-                <!--ENGINEERING-->
-                <div class="img-cont5">
-                    <div class="img-box">
-                        <div class="img-card clickable">
-                            <img id="project-img" src="multimedia/images/projects/print/project4.jpg">
-                            <div class="img-txt">
-                                <h3>Soporte de incubadora:</h3>
-                                <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut dolore placeat molestiae alias ipsa et!</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="img-box">
-                        <div class="img-card">
-                            <img id="project-img" src="multimedia/images/projects/cad/project6.jpeg">
-                        </div>
-                    </div>
-                </div>
-
-
+                <button class="project-nav project-nav--next" type="button" aria-label="Next project">
+                    <span class="iconify" data-icon="mdi:chevron-right" aria-hidden="true"></span>
+                </button>
             </div>
-            
 
-
+            <div class="project-meta">
+                <p class="project-status" id="project-status" aria-live="polite">Showing all projects</p>
+                <p class="project-hint"><span class="iconify" data-icon="mdi:gesture-swipe-horizontal" aria-hidden="true"></span> Drag, swipe or use the arrows</p>
+                <p class="project-counter" aria-label="Current project position"><span id="project-current">01</span><span class="project-counter__line"></span><span id="project-total">09</span></p>
+            </div>
         </section>
         
         <!-- CERTIFICATES -->
