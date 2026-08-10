@@ -190,10 +190,10 @@ button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 .title-lockup {
   margin: 32px auto 6px;
   width: min(84vw, 720px);
-  perspective: 900px;
-  transform: rotateX(calc(var(--my) * -5deg)) rotateY(calc(var(--mx) * 7deg));
-  transform-style: preserve-3d;
-  transition: transform .16s ease-out;
+  transform: perspective(900px) rotateX(calc(var(--my) * -6deg)) rotateY(calc(var(--mx) * 8deg));
+  transform-origin: center;
+  transition: transform .18s ease-out;
+  will-change: transform;
 }
 .title-logo {
   display: flex;
@@ -201,35 +201,19 @@ button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
   align-items: center;
   gap: clamp(12px, 1.5vw, 20px);
   color: #05060b;
-  filter: drop-shadow(0 0 18px rgba(242,211,91,.2)) drop-shadow(0 20px 28px rgba(0,0,0,.72));
+  filter: drop-shadow(0 0 16px rgba(242,211,91,.22));
   font-family: "Arial Black", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 900;
   line-height: .72;
   letter-spacing: -.075em;
-  transform-style: preserve-3d;
-  animation: logoFloat 6s ease-in-out infinite;
 }
 .title-line {
-  position: relative;
   display: block;
   width: max-content;
   max-width: 100%;
   color: #05060b;
   -webkit-text-stroke: clamp(2px, .28vw, 4px) var(--gold);
   paint-order: stroke fill;
-  text-shadow: 0 2px 0 #d5aa28, 0 4px 0 #8f6c12;
-  transform: translateZ(22px);
-  transform-style: preserve-3d;
-}
-.title-line::before {
-  content: attr(data-text);
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  color: #5f470c;
-  -webkit-text-stroke: clamp(2px, .28vw, 4px) #9c7616;
-  transform: translate3d(8px, 10px, -22px);
-  opacity: .78;
 }
 .title-star { font-size: clamp(72px, 12vw, 138px); }
 .title-wars { font-size: clamp(76px, 12.8vw, 148px); }
@@ -324,10 +308,6 @@ button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 @keyframes warpFlash { 0% { opacity: 0; transform: scale(.2); } 28% { opacity: .9; } 100% { opacity: 0; transform: scale(2.4); } }
 @keyframes soundBar { to { height: 15px; } }
 @keyframes nebulaBreath { to { opacity: .9; transform: scale(1.1) rotate(2deg); } }
-@keyframes logoFloat {
-  0%, 100% { transform: translate3d(0, 0, 0) rotateX(1.5deg) rotateZ(-.25deg); }
-  50% { transform: translate3d(0, -8px, 18px) rotateX(-1.5deg) rotateZ(.25deg); }
-}
 @keyframes orbitSpin { to { transform: rotate(346deg); } }
 @keyframes orbitSpinReverse { to { transform: rotate(-338deg); } }
 @keyframes crawlMove { from { transform: translate(-50%, 90%) perspective(340px) rotateX(64deg); } to { transform: translate(-50%, -125%) perspective(340px) rotateX(64deg); } }
@@ -379,5 +359,6 @@ button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .title-lockup { transform: none; }
   .starfield { display: none; }
 }

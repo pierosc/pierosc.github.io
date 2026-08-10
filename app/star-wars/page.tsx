@@ -157,8 +157,13 @@ export default function Home() {
     event.currentTarget.style.setProperty("--my", y.toFixed(3));
   };
 
+  const onPointerLeave = (event: React.PointerEvent<HTMLElement>) => {
+    event.currentTarget.style.setProperty("--mx", "0");
+    event.currentTarget.style.setProperty("--my", "0");
+  };
+
   return (
-    <main className="story" onPointerMove={onPointerMove}>
+    <main className="story" onPointerMove={onPointerMove} onPointerLeave={onPointerLeave}>
       <Starfield warp={warp} />
       <div className={`warp-flash ${warp ? "is-warping" : ""}`} aria-hidden="true" />
 
@@ -199,8 +204,8 @@ export default function Home() {
           <p className="kicker"><span /> {site.introEyebrow.replace("{count}", String(chapters.length))} <span /></p>
           <div className="title-lockup" aria-label={site.metadataTitle}>
             <div className="title-logo" aria-hidden="true">
-              <span className="title-line title-star" data-text={site.titleLine1}>{site.titleLine1}</span>
-              <span className="title-line title-wars" data-text={site.titleLine2}>{site.titleLine2}</span>
+              <span className="title-line title-star">{site.titleLine1}</span>
+              <span className="title-line title-wars">{site.titleLine2}</span>
             </div>
           </div>
           <h1>{site.subtitle}</h1>
