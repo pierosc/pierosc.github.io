@@ -1,234 +1,35 @@
-#footer{
-    display: flex;
-    flex-direction: column;
-    color: white;
-    background: var(--greenish-color);
-    overflow: hidden;
+#footer {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  background: var(--green-deep);
 }
 
+#footer::before { content: ""; position: absolute; inset: 0; opacity: 0.12; background-image: linear-gradient(30deg, rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(150deg, rgba(255,255,255,.35) 1px, transparent 1px); background-size: 68px 118px; }
+.footer-hex { position: absolute; width: 620px; height: 550px; top: -270px; right: -120px; opacity: 0.12; border: 1px solid white; background: rgba(255,255,255,.2); clip-path: var(--hex); transform: rotate(8deg); }
+.footer-shell { position: relative; width: var(--shell); margin: 0 auto; padding: clamp(5rem, 10vw, 9rem) 0 2rem; }
+.footer-cta { max-width: 880px; }
+.footer-cta .section-kicker { color: var(--ink); }
+.footer-cta h2 { color: white; }
+.footer-cta h2 em { color: var(--ink); }
+.footer-cta > p:not(.section-kicker) { max-width: 620px; margin: 1.5rem 0 2rem; color: rgba(255, 255, 255, 0.78); font-size: 0.95rem; line-height: 1.75; }
+.button--light { color: var(--ink); background: white; }
+.button--light:hover { background: var(--ink); color: white; }
 
-.top-footer{
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    height: 110vh;
-}
+.footer-bottom { display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: center; margin-top: clamp(5rem, 10vw, 9rem); padding-top: 1.4rem; border-top: 1px solid rgba(255, 255, 255, 0.28); }
+.nav-brand--footer > span { color: var(--green-deep); background: white; }
+.footer-links { display: flex; gap: 1.3rem; }
+.footer-links a { color: white; font-size: 0.68rem; font-weight: 700; text-decoration: none; }
+.footer-links a:hover { color: var(--ink); }
+.footer-bottom > p { margin: 0; color: rgba(255, 255, 255, 0.68); font-size: 0.62rem; text-align: right; }
 
-.rightback{
-    position: absolute;
-    left: 75%;
-    width: 25%;
-    height: 14vw;
-    background-color:var(--blackish-color);
-}
-.leftback{
-    position: absolute;
-    width: 25%;
-    height: 14vw;
-    background-color: var(--blackish-color);
-}
-.left{
-    height: 13vw;
-    width: 25%;
-    background-color: var(--blackish-color);
-}
-.middle{
-    width: 50%;
-    height: 14vw;
-    background-color: var(--blackish-color);
-}
-.right{
-    height: 13vw;
-    width: 25%;
-    background-color: var(--blackish-color);
-}
-.footer-content{
-    color: var(--blackish-color);
-    padding-bottom: 10vh;
-    overflow: hidden;
-}
-.footer-circle{
-    text-align: center;
-    z-index: 5;
-    display: none;
-    background-color: var(--blackish-color);
-    position: fixed;
-    justify-content: center;
-    left: 36vw;
-    width: 30vw;
-    height: 30vw;
-    bottom: -15vw;
-    border-radius: 15vw;
-    transform: translateY(15vw);
-}
-.footer-circle .iconify{
-    padding-top: 10vw;
-    color: white;
-    width: 10vw;
-    height: 10vw;
-}
-.footer-menu{
-    display: none;
-    background-color:rgb(20,20,20);
-    position: fixed;
-    justify-content: center;
-    left: 26vw;
-    width: 50vw;
-    height: 50vw;
-    bottom: -50vw;
-    border-radius: 25vw;   
-    transform: scale(1);
-}
-.footer-menu a{
-    text-align: center;
-    position: absolute;
-    color: white;
-    width: 5vw;
-    height: 5vw;
-    top: 2.5vw;
-    left: calc(50% - 2.5vw);
-    transform-origin: center 22.5vw;
-}
-.footer-menu .iconify{
-    width: 100%;
-    height: 100%;
+@media (max-width: 760px) {
+  .footer-bottom { grid-template-columns: 1fr auto; }
+  .footer-bottom > p { grid-column: 1 / -1; text-align: left; }
 }
 
-.footer-menu #a1{
-    transform: rotate(72deg);
-}
-.footer-menu #a1 .iconify{
-    transform: rotate(-72deg);
-}
-.footer-menu #a2{
-    transform: rotate(-36deg);
-}
-.footer-menu #a2 .iconify{
-    transform: rotate(36deg);
-}
-.footer-menu #a3{
-    transform: rotate(0deg);
-}
-.footer-menu #a4{
-    transform: rotate(36deg);
-}
-.footer-menu #a4 .iconify{
-    transform: rotate(-36deg);
-}
-.footer-menu #a5{
-    transform: rotate(-72deg);
-}
-.footer-menu #a5 .iconify{
-    transform: rotate(72deg);
-}
-
-
-.footer-menu .footer-innermenu{
-    transform-origin: center 25vw;
-    transform: rotate(-45deg);
-}
-@keyframes footerinner {
-    0%{
-        transform: rotate(-180deg);
-    }
-    100%{
-        transform: rotate(0deg);
-    }
-}
-@keyframes footerinnerr {
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(180deg);
-    }
-}
-@keyframes footermenu {
-    0%{
-        transform: scale(0);
-        bottom: -50vw;
-    }
-    100%{
-        transform: scale(1);
-        bottom: -25vw;
-    }
-}
-@keyframes footermenur {
-    0%{
-        transform: scale(1);
-        bottom: -25vw;
-    }
-    100%{
-        transform: scale(0);
-        bottom: -50vw;
-    }
-}
-
-@keyframes tuercaright {
-    0%{
-        transform: skewY(0);
-        height: 13vw;
-    }
-    100%{
-        transform: skewY(45deg);
-        height: 25vw;
-    }
-}
-@keyframes tuercaleft {
-    0%{
-        transform: skewY(0);
-        height: 13vw;
-    }
-    100%{
-        transform: skewY(-45deg);
-        height: 25vw;
-    }
-}
-@keyframes footercircle {
-    0%{
-        transform: translateY(15vw);
-    }
-    100%{
-        transform: translateY(0vw);
-    }
-}
-@keyframes tuercarightr {
-    0%{
-        transform: skewY(45deg);
-        height: 25vw;
-    } 
-    100%{
-        transform: skewY(0);
-        height: 13vw;
-    }
-}
-@keyframes tuercaleftr {
-    0%{
-        transform: skewY(-45deg);
-        height: 25vw;
-    }
-    100%{
-        transform: skewY(0deg);
-        height: 13vw;
-    }
-}
-@keyframes footercircler {
-    0%{
-        transform: translateY(0vw);
-    }
-    100%{
-        transform: translateY(15vw);
-    }
-
-}
-
-
-
-
-
-
-@media only screen and (max-device-width: 980px){
-.top-footer{
-    height: 50vh;
-}
+@media (max-width: 520px) {
+  .footer-bottom { grid-template-columns: 1fr; }
+  .footer-links { justify-content: space-between; }
+  .footer-bottom > p { grid-column: auto; }
 }

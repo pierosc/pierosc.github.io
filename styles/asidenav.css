@@ -1,102 +1,43 @@
-
-.dropdwn .iconify{
-    width:6vh;
-    height: 6vh;
-}
-  
-.dropdwn {
-    position: fixed;                            /*Para que siempre este en el mismo lugar*/
-    bottom: 2rem;                               /*Posicionamiento en pantalla*/
-    right: 2rem;                                /*Posicionamiento en pantalla*/
-    display:flex;
-    flex-direction: column-reverse;
-    z-index: 100;
-    transform: scale(0);                        /*Para que inicie escondido*/
-    transition: transform 500ms ease;           /*Animacion para que aparezca*/
-    transform-origin: bottom right;             /*Desde dónde aparece*/
+.social-dock {
+  position: fixed;
+  z-index: 70;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
 }
 
-.dropbtn {
-    background-color: var(--blackish-color);
-    color: white;
-    padding: 2vh;
-    display: inline-block;
-    border-radius: 50%;
-}
-.dropbtn-box :hover{
-  cursor: pointer;
-}
-.dropbtn .iconify{
-    transition: transform 0.3s ease-in-out;     /*Animacion de giro del + */
+.social-dock.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+
+.dropbtn, .social-dock__links a {
+  width: 3.2rem;
+  height: 3.2rem;
+  display: grid;
+  place-items: center;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(7, 17, 13, 0.92);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  clip-path: var(--hex);
 }
 
-.dropdown-content {
-    background-color: #04AA6D;
-    z-index: 99;
-    border-top-left-radius:5vh;
-    border-top-right-radius:5vh;
-    transform: scaleY(0);
-    transition: transform 0.15s ease-out;
-    transition-delay: 0.15s;
-    transform-origin: bottom;
-  }
-  .dropdown-content a:first-child {
-    border-top-left-radius:50% ;
-    border-top-right-radius:50% ;
-  }
-  .dropdown-content a {
-    color: white;
-    padding: 2vh;
-    text-decoration: none;
-    display: block;
-  }
+.dropbtn { border: 0; color: var(--ink); background: var(--green); cursor: pointer; }
+.dropbtn .iconify, .social-dock__links .iconify { width: 1.15rem; height: 1.15rem; }
+.dropbtn .iconify { transition: transform 220ms ease; }
+.social-dock.is-open .dropbtn .iconify { transform: rotate(90deg); }
 
-  .dropdown-content a:hover {background-color: var(--blackish-color)}
+.social-dock__links { display: grid; gap: 0.45rem; opacity: 0; pointer-events: none; transform: translateY(10px) scale(0.9); transform-origin: bottom center; transition: opacity 180ms ease, transform 220ms ease; }
+.social-dock.is-open .social-dock__links { opacity: 1; pointer-events: auto; transform: translateY(0) scale(1); }
+.social-dock__links a { text-decoration: none; transition: color 180ms ease, background 180ms ease, transform 180ms ease; }
+.social-dock__links a:hover { color: var(--ink); background: var(--green-bright); transform: translateY(-2px); }
 
-/*Animacion de los bordes del +x */
-@keyframes corner {
-  0%{
-    border-top-left-radius:50% ;
-    border-top-right-radius:50% ;
-  }
-  100%{
-    border-top-left-radius:0 ;
-    border-top-right-radius:0 ;
-  }
-}
-@keyframes corner-reverse {
-  0%{
-    border-top-left-radius:0% ;
-    border-top-right-radius:0% ;
-  }
-  100%{
-    border-top-left-radius:50% ;
-    border-top-right-radius:50% ;
-  }
-}
-@keyframes asidebot {
-  0%{
-    bottom: 2rem;
-  }
-  100%{
-    bottom: -5rem;
-  }
-}
-@keyframes asidebotr {
-  0%{
-    bottom: -5rem;
-  }
-  100%{
-    bottom: 2rem;
-  }
-}
-@media only screen and (max-device-width: 980px){
-  .dropdwn .iconify{
-    width:3vh;
-    height: 3vh;
-}
-.dropdwn {                       
-  bottom: 0.5rem;                               /*Posicionamiento en pantalla*/
-  right:0.5rem;
-}
+@media (max-width: 700px) {
+  .social-dock { right: 0.8rem; bottom: 0.8rem; }
+  .dropbtn, .social-dock__links a { width: 2.9rem; height: 2.9rem; }
 }

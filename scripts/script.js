@@ -1,78 +1,68 @@
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+// Hero typing
+if (window.Typed && document.querySelector(".typing")) {
+  new Typed(".typing", {
+    strings: ["a developer", "a mechatronics engineer", "a product maker", "a creative technologist"],
+    typeSpeed: reducedMotion ? 0 : 62,
+    backSpeed: reducedMotion ? 0 : 34,
+    backDelay: 1500,
+    loop: !reducedMotion,
+    showCursor: true,
+  });
+}
 
-//COVER
+// Mobile navigation
+const menuButton = document.getElementById("top-nav-menu");
+const navOptions = document.getElementById("top-nav-options");
+const navLinks = Array.from(document.querySelectorAll(".nav-link"));
 
-const topmenu = document.getElementById("top-nav-menu");
-const topoptions = document.getElementById("top-nav-options");
-var navstatus = 0;
+const setMenuState = (open) => {
+  navOptions?.classList.toggle("is-open", open);
+  menuButton?.setAttribute("aria-expanded", String(open));
+  document.body.classList.toggle("menu-open", open && window.innerWidth <= 900);
+};
 
-topmenu.addEventListener("click", () =>{
-  if (navstatus ==0 ){
-  topoptions.style.display = "flex";
-  setTimeout(() => {
-    topoptions.style.transform = "scaleY(1)";
-  }, 50); 
-  navstatus=1;
-  }
-  else{
-    topoptions.style.transform = "scaleY(0)";
-    setTimeout(() => {
-      topoptions.style.display = "none";
-    }, 100);
-    navstatus = 0;
-  }
-})
-//COVER TYPING
-var typed = new Typed(".typing", {
-  strings: ["Programmer", "Mechatronic", "Developer","Musician", "Techies player"],
-  typeSpeed: 100,
-  backSpeed: 60,
-  loop: true
+menuButton?.addEventListener("click", () => setMenuState(!navOptions.classList.contains("is-open")));
+navLinks.forEach((link) => link.addEventListener("click", () => setMenuState(false)));
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 900) setMenuState(false);
 });
 
-//HEADER NAV//
-const about = document.getElementById("aboutme");
-const project = document.getElementById("project");
-const certificates = document.getElementById("certificate");
-const social = document.getElementById("social");
-//sections
-const aboutsection = document.getElementById("nombre");
-const projectsection = document.getElementById("projects");
-const certificatesection = document.getElementById("cert-title");
-const socialsection = document.getElementById("footer");
+// Section reveals and active navigation
+const revealItems = document.querySelectorAll(".reveal, .icons");
+if (reducedMotion || !("IntersectionObserver" in window)) {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+} else {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.14, rootMargin: "0px 0px -45px" });
+  revealItems.forEach((item) => revealObserver.observe(item));
+}
 
-about.addEventListener("click", () =>{
-  let scrollpos = document.documentElement.scrollTop;
-  var inicioabout = scrollpos + aboutsection.getBoundingClientRect().top - 69;
-  scroll(0,inicioabout);
+const sectionLinks = new Map([
+  [document.getElementById("knowledge"), document.getElementById("aboutme")],
+  [document.getElementById("projects"), document.getElementById("project")],
+  [document.getElementById("certificates"), document.getElementById("certificate")],
+  [document.getElementById("footer"), document.getElementById("social")],
+]);
+
+const activeSectionObserver = new IntersectionObserver((entries) => {
+  const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+  if (!visible) return;
+  navLinks.forEach((link) => link.classList.remove("is-active"));
+  sectionLinks.get(visible.target)?.classList.add("is-active");
+}, { rootMargin: "-25% 0px -55%", threshold: [0, 0.1, 0.3] });
+
+sectionLinks.forEach((link, section) => {
+  if (section) activeSectionObserver.observe(section);
 });
 
-project.addEventListener("click", () =>{
-  let scrollpos = document.documentElement.scrollTop;
-  var inicioproject = scrollpos + projectsection.getBoundingClientRect().top - 69;
-  scroll(0,inicioproject);
-});
-
-certificates.addEventListener("click", () =>{
-  let scrollpos = document.documentElement.scrollTop;
-  var iniciocertificate = scrollpos + certificatesection.getBoundingClientRect().top - 69;
-  scroll(0,iniciocertificate);
-
-});  
-
-social.addEventListener("click", () =>{
-  let scrollpos = document.documentElement.scrollTop;
-  var iniciosocial = scrollpos + socialsection.getBoundingClientRect().top - 69;
-  scroll(0, iniciosocial);
-});
-
-
-
-
-
-
-
-//PROJECT GALLERY//
+// Project carousel
 const projectTrack = document.getElementById("project-track");
 const projectCards = Array.from(document.querySelectorAll(".project-card"));
 const projectFilters = Array.from(document.querySelectorAll(".project-filter"));
@@ -84,69 +74,59 @@ const projectStatus = document.getElementById("project-status");
 
 const visibleProjectCards = () => projectCards.filter((card) => !card.hidden);
 
-const updateProjectNavigation = () => {
-  const visibleCards = visibleProjectCards();
-  const maxScroll = Math.max(0, projectTrack.scrollWidth - projectTrack.clientWidth);
-  const firstCard = visibleCards[0];
-  const gap = parseFloat(getComputedStyle(projectTrack).columnGap) || 24;
-  const step = firstCard ? firstCard.getBoundingClientRect().width + gap : 1;
-  const position = Math.min(visibleCards.length, Math.round(projectTrack.scrollLeft / step) + 1);
-
-  currentProject.textContent = String(position || 0).padStart(2, "0");
-  totalProjects.textContent = String(visibleCards.length).padStart(2, "0");
-  previousProject.disabled = projectTrack.scrollLeft <= 2;
-  nextProject.disabled = projectTrack.scrollLeft >= maxScroll - 2 || maxScroll === 0;
-};
-
-const scrollProjects = (direction) => {
+const projectStep = () => {
   const firstCard = visibleProjectCards()[0];
-  if (!firstCard) return;
-
-  const gap = parseFloat(getComputedStyle(projectTrack).columnGap) || 24;
-  projectTrack.scrollBy({
-    left: direction * (firstCard.getBoundingClientRect().width + gap),
-    behavior: "smooth",
-  });
+  const gap = projectTrack ? parseFloat(getComputedStyle(projectTrack).columnGap) || 18 : 18;
+  return firstCard ? firstCard.getBoundingClientRect().width + gap : 1;
 };
+
+const updateProjectNavigation = () => {
+  if (!projectTrack) return;
+  const cards = visibleProjectCards();
+  const maxScroll = Math.max(0, projectTrack.scrollWidth - projectTrack.clientWidth);
+  const position = Math.min(cards.length, Math.round(projectTrack.scrollLeft / projectStep()) + 1);
+  if (currentProject) currentProject.textContent = String(position || 0).padStart(2, "0");
+  if (totalProjects) totalProjects.textContent = String(cards.length).padStart(2, "0");
+  if (previousProject) previousProject.disabled = projectTrack.scrollLeft <= 2;
+  if (nextProject) nextProject.disabled = projectTrack.scrollLeft >= maxScroll - 2 || maxScroll === 0;
+};
+
+const scrollProjects = (direction) => projectTrack?.scrollBy({ left: direction * projectStep(), behavior: reducedMotion ? "auto" : "smooth" });
 
 projectFilters.forEach((filterButton) => {
   filterButton.addEventListener("click", () => {
     const selectedFilter = filterButton.dataset.projectFilter;
-
     projectFilters.forEach((button) => {
-      const isActive = button === filterButton;
-      button.classList.toggle("is-active", isActive);
-      button.setAttribute("aria-pressed", String(isActive));
+      const active = button === filterButton;
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-pressed", String(active));
     });
-
     projectCards.forEach((card) => {
       card.hidden = selectedFilter !== "all" && card.dataset.projectCategory !== selectedFilter;
     });
-
     const label = filterButton.textContent.trim();
-    projectStatus.textContent = selectedFilter === "all" ? "Showing all projects" : `Showing ${label} projects`;
-    projectTrack.scrollTo({ left: 0, behavior: "smooth" });
+    if (projectStatus) projectStatus.textContent = selectedFilter === "all" ? "Showing all projects" : `Showing ${label} projects`;
+    projectTrack?.scrollTo({ left: 0, behavior: reducedMotion ? "auto" : "smooth" });
     requestAnimationFrame(updateProjectNavigation);
   });
 });
 
-previousProject.addEventListener("click", () => scrollProjects(-1));
-nextProject.addEventListener("click", () => scrollProjects(1));
-projectTrack.addEventListener("scroll", updateProjectNavigation, { passive: true });
+previousProject?.addEventListener("click", () => scrollProjects(-1));
+nextProject?.addEventListener("click", () => scrollProjects(1));
+projectTrack?.addEventListener("scroll", updateProjectNavigation, { passive: true });
 window.addEventListener("resize", updateProjectNavigation);
 
-projectTrack.addEventListener("keydown", (event) => {
-  if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
-    event.preventDefault();
-    scrollProjects(event.key === "ArrowLeft" ? -1 : 1);
-  }
+projectTrack?.addEventListener("keydown", (event) => {
+  if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+  event.preventDefault();
+  scrollProjects(event.key === "ArrowLeft" ? -1 : 1);
 });
 
 let isProjectDragging = false;
 let projectDragStart = 0;
 let projectScrollStart = 0;
 
-projectTrack.addEventListener("pointerdown", (event) => {
+projectTrack?.addEventListener("pointerdown", (event) => {
   if (event.pointerType !== "mouse" || event.button !== 0) return;
   isProjectDragging = true;
   projectDragStart = event.clientX;
@@ -155,163 +135,44 @@ projectTrack.addEventListener("pointerdown", (event) => {
   projectTrack.setPointerCapture(event.pointerId);
 });
 
-projectTrack.addEventListener("pointermove", (event) => {
-  if (!isProjectDragging) return;
-  projectTrack.scrollLeft = projectScrollStart - (event.clientX - projectDragStart);
+projectTrack?.addEventListener("pointermove", (event) => {
+  if (isProjectDragging) projectTrack.scrollLeft = projectScrollStart - (event.clientX - projectDragStart);
 });
 
 const stopProjectDragging = (event) => {
-  if (!isProjectDragging) return;
+  if (!isProjectDragging || !projectTrack) return;
   isProjectDragging = false;
   projectTrack.classList.remove("is-dragging");
   if (projectTrack.hasPointerCapture(event.pointerId)) projectTrack.releasePointerCapture(event.pointerId);
   updateProjectNavigation();
 };
 
-projectTrack.addEventListener("pointerup", stopProjectDragging);
-projectTrack.addEventListener("pointercancel", stopProjectDragging);
+projectTrack?.addEventListener("pointerup", stopProjectDragging);
+projectTrack?.addEventListener("pointercancel", stopProjectDragging);
 updateProjectNavigation();
 
-
-
-
-//CERTIFICATES
-VanillaTilt.init(document.querySelectorAll(".cert-img .img-box"), {
-  max: 25,
-  speed: 400,
-  glare:true,
-  "max-glare":1,
-});
-
-var footerstatus = 0;
-//ASIDE NAV ANIMATIONS//
-window.onscroll = () => {
-    let scroll = document.documentElement.scrollTop;
-    if (scroll > 500) {
-      document.getElementById("dropdwn").style.transform = "scale(1)";
-      
-      //console.log(scrollY);
-    } else {
-      document.getElementById("dropdwn").style.transform = "scale(0)";
-    };
-    
-    //NAVTOP
-    let inicioabout = scroll + aboutsection.getBoundingClientRect().top - 70;
-    let inicioproject = scroll + projectsection.getBoundingClientRect().top - 70;
-    let iniciocertificate = scroll + certificatesection.getBoundingClientRect().top - 70;
-    let iniciosocial = scroll + socialsection.getBoundingClientRect().top - 70;
-
-    if (scroll>=inicioabout && scroll< inicioproject){
-      about.className="nav_active";
-      project.className="nav";
-      certificates.className="nav";
-      social.className="nav";
-    };
-    if (scroll>=inicioproject && scroll< iniciocertificate){
-
-      about.className="nav";
-      project.className="nav_active";
-      certificates.className="nav";
-      social.className="nav";
-    };
-    if (scroll>=iniciocertificate && scroll< iniciosocial){
-
-      about.className="nav";
-      project.className="nav";
-      certificates.className="nav_active";
-      social.className="nav";
-    };
-    if (scroll>=iniciosocial){
-      about.className="nav";
-      project.className="nav";
-      certificates.className="nav";
-      social.className="nav_active";
-    };
-    //Footer
-    const footertop = document.querySelector(".top-footer");
-    const right = document.querySelector(".right");
-    const left = document.querySelector(".left");
-    const footercircle = document.querySelector(".footer-circle");
-    const footermenu = document.querySelector(".footer-menu");
-    const footerinner = document.querySelector(".footer-innermenu");
-    
-
-    
-    if (scroll>=iniciosocial+120){
-      footercircle.style.display = "block";
-      footermenu.style.display = "block";
-      right.style.animation = "tuercaright 1s normal both";
-      left.style.animation = "tuercaleft 1s normal both";
-      footercircle.style.animation = "footercircle 1s 1s normal both";
-      footermenu.style.animation = "footermenu 1s 1s normal both";
-      footerinner.style.animation = "footerinner 1s 1s normal both";
-      document.getElementById("dropdwn").style.animation = "asidebot 1s linear normal both";
-      console.log(footermenu);
-
-      footerstatus = 1;
-    };
-
-    if (scroll<iniciosocial+120 && footerstatus == 1){
-      right.style.animation = "tuercarightr 1s normal both";
-      left.style.animation = "tuercaleftr 1s normal both";
-      footercircle.style.animation = "footercircler 1s normal both";
-      footermenu.style.animation = "footermenur 1s normal both";
-      footerinner.style.animation = "footerinnerr 1s normal both";
-      document.getElementById("dropdwn").style.animation = "asidebotr 1s 1s normal both";
-    };
-
-
-};
-//Aparición de las opciones//
-const navspan = document.getElementById("span");
-const navicon = document.getElementById("drop-icon");
-const drpbtn = document.querySelector(".dropbtn");
-let asidenavstatus = 0;
-
-drpbtn.addEventListener("click", () => {
-  if(asidenavstatus == 0){
-  navspan.style.transform = "scaleY(1)";
-  navicon.style.transform = "rotate(135deg)";
-  drpbtn.style.animation = "corner 0.15s normal both";
-  asidenavstatus =1;
-  }
-  else {
-    navspan.style.transform = "scaleY(0)";
-    navicon.style.transform = "rotate(0deg)";
-    drpbtn.style.animation = "corner-reverse 0.15s normal 0.3s both";
-    asidenavstatus=0;
-  };
-
-});
-
-
-
-
-window.onload = () => {
-    // SHOW ASIDE NAV
-    document.getElementById("dropdwn").style.transform = "scale(0)";
-    navspan.style.transform = "scaleY(0)";
-    //LOADER ANIMATION
-   /* document.getElementById("loading").style.opacity = "0";
-    document.getElementById("loading").style.visibility = "hidden";*/
-    document.body.style.overflowY = "auto";
-   // window.scrollTo(0, 0);
+// Compact social dock
+const socialDock = document.getElementById("dropdwn");
+const socialButton = socialDock?.querySelector(".dropbtn");
+const setSocialState = (open) => {
+  socialDock?.classList.toggle("is-open", open);
+  socialButton?.setAttribute("aria-expanded", String(open));
+  socialButton?.setAttribute("aria-label", open ? "Close social links" : "Open social links");
 };
 
+socialButton?.addEventListener("click", () => setSocialState(!socialDock.classList.contains("is-open")));
+document.addEventListener("click", (event) => {
+  if (socialDock && !socialDock.contains(event.target)) setSocialState(false);
+});
 
-//Footer
+const footer = document.getElementById("footer");
+const updateFloatingDock = () => {
+  const footerIsNear = footer && footer.getBoundingClientRect().top < window.innerHeight * 0.82;
+  socialDock?.classList.toggle("is-visible", window.scrollY > window.innerHeight * 0.55 && !footerIsNear);
+  if (footerIsNear) setSocialState(false);
+};
+window.addEventListener("scroll", updateFloatingDock, { passive: true });
+updateFloatingDock();
 
-
-
-
-//SCROLLREVEAL
-//knowledge
-ScrollReveal().reveal('.knowledge h1', {delay: 500});
-ScrollReveal().reveal('.knowledge h2', {delay: 500});
-ScrollReveal().reveal('.about-me .icons .icon-box', { interval: 200, reset: true });
-//projects
-ScrollReveal().reveal('.projects-header', {delay: 250});
-ScrollReveal().reveal('.project-filter', {interval: 90});
-ScrollReveal().reveal('.project-card', {interval: 120});
-//certificates
-//ScrollReveal().reveal('.certificates', {delay: 500});
+const year = document.getElementById("current-year");
+if (year) year.textContent = new Date().getFullYear();

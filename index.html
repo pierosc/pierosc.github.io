@@ -1,35 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Piero David Saldaña</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07110d">
+    <meta name="description" content="Portfolio of Piero David Saldaña, mechatronics engineer and developer creating digital products, electronics and functional prototypes.">
+    <title>Piero Saldaña — Mechatronics &amp; Software</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles/articlestyle.css">
     <link rel="stylesheet" type="text/css" href="styles/headernavstyle.css">
     <link rel="stylesheet" type="text/css" href="styles/asidenav.css">
     <link rel="stylesheet" type="text/css" href="styles/footer.css">
-    <!--Iconos-->
     <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
-    <!--Typed animation-->
     <script src="scripts/typed.js"></script>
-    <!--Scripts carousel-->
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body style="overflow-y: auto;">
+<body>
     <!-- LOADING -->
     <!-- COVER -->
-    <header class="cover">
-        <video class="video" src="multimedia/video/backvideo4.mp4" loop="" autoplay="autoplay" muted="muted"></video>
+    <header class="cover" id="home">
+        <video class="video" src="multimedia/video/backvideo4.mp4" loop autoplay muted playsinline poster="multimedia/images/background4.jpg"></video>
+        <div class="cover-shade"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-hex hero-hex--one" aria-hidden="true"><span class="iconify" data-icon="mdi:code-tags"></span></div>
+        <div class="hero-hex hero-hex--two" aria-hidden="true"><span class="iconify" data-icon="mdi:robot-industrial-outline"></span></div>
+        <div class="hero-hex hero-hex--three" aria-hidden="true"><span class="iconify" data-icon="mdi:cube-outline"></span></div>
+        <div class="cover-content">
       
-        <h1>Piero David Saldaña</h1>
-        <div class="text-3" data-aos="fade-right"><span class="typing" translate="no"></span><span class="typed-cursor"></span></div>
+        <p class="hero-kicker"><span></span> Mechatronics engineer · Lima, Peru</p>
+        <h1><span>Piero David</span> Saldaña</h1>
+        <p class="hero-summary">I connect software, electronics and product design to turn ideas into useful, working experiences.</p>
+        <p class="hero-role"><span>Building as</span> <strong class="typing" translate="no"></strong></p>
+        <div class="hero-actions">
+            <a class="button button--primary" href="#projects">Explore my work <span class="iconify" data-icon="mdi:arrow-top-right"></span></a>
+            <a class="button button--ghost" href="https://www.linkedin.com/in/pierosc/" target="_blank" rel="noopener noreferrer">Let’s connect</a>
+        </div>
+        <div class="hero-proof" aria-label="Areas of expertise">
+            <span><strong>Software</strong><small>Web &amp; interfaces</small></span>
+            <span><strong>Hardware</strong><small>Electronics &amp; control</small></span>
+            <span><strong>Product</strong><small>CAD &amp; prototyping</small></span>
+        </div>
+        </div>
         
         <span class="scrollDown">       
-            <a href="#nav_top">
+            <a href="#knowledge" aria-label="Discover the portfolio">
               <svg width="100" height="50" viewBox="0 0 100 50" fill="none">
                 <g id="Group 1">
                   <path fill="currentcolor" id="lineas (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M18.6145 1.68161C18.7903 1.46869 19.1055 1.43864 19.3184 1.61448L50.4769 27.3474L80.6757 1.6194C80.8859 1.44032 81.2015 1.46554 81.3806 1.67574C81.5597 1.88595 81.5345 2.20152 81.3243 2.3806L50.8061 28.3806C50.6215 28.5379 50.3505 28.54 50.1635 28.3855L18.6816 2.38552C18.4687 2.20968 18.4386 1.89453 18.6145 1.68161Z"></path>
@@ -43,16 +58,15 @@
     </header>
 
     <!-- NAVBAR -->
-    <nav id="nav_top">
+    <nav id="nav_top" aria-label="Primary navigation">
         <div class="nav-container">
-            <ul id="top-nav-menu">
-                <li class="nav"><span id="topmenu" class="iconify" data-icon="bx:bx-menu"></span></li>
-            </ul>
+            <a class="nav-brand" href="#home" aria-label="Piero Saldaña, home"><span>PS</span><strong>Piero Saldaña</strong></a>
+            <button id="top-nav-menu" type="button" aria-label="Open navigation" aria-expanded="false"><span id="topmenu" class="iconify" data-icon="bx:bx-menu-alt-right"></span></button>
             <ul id="top-nav-options">
-                <li class="nav"><a  id="aboutme">About me</a></li>
-                <li class="nav"><a  id="project" >Projects</a></li>
-                <li class="nav"><a  id="certificate">Certificates</a></li>
-                <li class="nav"><a  id="social">Social Media</a></li>    
+                <li><a class="nav-link" id="aboutme" href="#knowledge">About</a></li>
+                <li><a class="nav-link" id="project" href="#projects">Projects</a></li>
+                <li><a class="nav-link" id="certificate" href="#certificates">Certificates</a></li>
+                <li><a class="nav-link nav-link--contact" id="social" href="#footer">Contact <span class="iconify" data-icon="mdi:arrow-top-right"></span></a></li>
             </ul>
 
         </div>
@@ -63,19 +77,35 @@
         
         <!-- kNOWLEDGE -->
         <section class="knowledge" id="knowledge">
-                <h1 id="nombre">
-                    Piero David Saldaña Calderon
-                </h1>
+            <div class="section-shell">
+                <div class="section-heading reveal">
+                    <p class="section-kicker">01 · About me</p>
+                    <h2 id="nombre">Engineering ideas into <em>real experiences.</em></h2>
+                </div>
                 <div class="about-me">
-                    <div class="perfil">
-                        <h2>
-                            Bachelor of mechatronics engineering, passionate about programming. I have experience in multidisciplinary projects. Currently looking for the right opportunity to work in an environment that will help me progress as a programmer.
-                        </h2>
-                    </div>                  
+                    <div class="portrait-column reveal">
+                        <div class="portrait-frame">
+                            <img src="multimedia/images/FOTO PERFIL.jpg" alt="Portrait of Piero David Saldaña" loading="lazy" decoding="async">
+                        </div>
+                        <div class="portrait-badge"><span class="iconify" data-icon="mdi:map-marker-outline"></span><span>Lima, Peru<small>Open to opportunities</small></span></div>
+                    </div>
+                    <div class="perfil reveal">
+                        <p class="profile-lead">I’m a mechatronics engineer passionate about programming and multidisciplinary problem-solving.</p>
+                        <p>My work lives where code meets the physical world: digital interfaces, embedded systems, CAD and rapid prototypes. I care about clear thinking, purposeful details and building things that genuinely work.</p>
+                        <div class="profile-stats">
+                            <span><strong>4</strong><small>disciplines connected</small></span>
+                            <span><strong>9</strong><small>featured projects</small></span>
+                            <span><strong>7</strong><small>certifications</small></span>
+                        </div>
+                    </div>
+                    <div class="skills-heading reveal">
+                        <p>Toolkit</p>
+                        <span>Technologies I use to design, build and iterate.</span>
+                    </div>
                     <div class="icons">
                         <div class="icon-box">                      
                             <span class="iconify" data-icon="ant-design:html5-filled"></span>
-                            <h3>HTML 5</h3>
+                            <h3>HTML5</h3>
                         </div>
                         <div class="icon-box">
                         <span class="iconify" data-icon="ion:logo-css3"></span>
@@ -83,11 +113,11 @@
                         </div>
                         <div class="icon-box">
                             <span class="iconify" data-icon="ion:logo-javascript"></span>
-                            <h3>Javascript</h3>
+                            <h3>JavaScript</h3>
                         </div>
                         <div class="icon-box">
                             <span class="iconify" data-icon="bx:bxl-visual-studio"></span>
-                            <h3>VS code</h3>
+                            <h3>VS Code</h3>
                         </div>
                         <div class="icon-box">
                             <span class="iconify" data-icon="akar-icons:python-fill"></span>
@@ -95,7 +125,7 @@
                         </div>
                         <div class="icon-box">
                             <span class="iconify" data-icon="cib:raspberry-pi"></span>
-                            <h3>Raspberry-pi</h3>
+                            <h3>Raspberry Pi</h3>
                         </div>  
                         <div class="icon-box">
                             <span class="iconify" data-icon="bx:bxl-c-plus-plus"></span>
@@ -105,46 +135,32 @@
                             <span class="iconify" data-icon="file-icons:arduino"></span>
                             <h3>Arduino</h3>
                         </div>
-<!--
-                        <div class="icon-box">
-                            <span class="iconify" data-icon="akar-icons:node-fill"></span>
-                            <h3>Node Js</h3>
-                        </div>
-                        -->
                         <div class="icon-box">
                             <span class="iconify" data-icon="akar-icons:bootstrap-fill"></span>
                             <h3>Bootstrap</h3>
                         </div>
                         <div class="icon-box">
                             <span class="iconify" data-icon="bi:github"></span>
-                            <h3>Github Desktop</h3>
+                            <h3>GitHub</h3>
                         </div>
                         <div class="icon-box">
                             <span class="iconify" data-icon="akar-icons:react-fill"></span>
-                            <h3>React Js</h3>
+                            <h3>React</h3>
                         </div>
                         <div class="icon-box">
                             <span class="iconify" data-icon="cib:flutter"></span>
                             <h3>Flutter</h3>
                         </div>
-                       <!-- <span class="iconify" data-icon="cib:gitkraken"></span>
-                        <span class="iconify" data-icon="file-icons:labview"></span>
-                        <span class="iconify" data-icon="cib:git"></span>
-                        
-                        <span class="iconify" data-icon="akar-icons:jquery-fill"></span><!--
-                        <span class="iconify" data-icon="fa-brands:node"></span>
-                        <span class="iconify" data-icon="akar-icons:react-fill"></span>
-                        <span class="iconify" data-icon="cib:sass"></span>
-                        <span class="iconify" data-icon="akar-icons:jquery-fill"></span>-->
                     </div>
 
                 </div>
+            </div>
         </section>
         
         <!-- PROJECTS -->
         <section class="projects" id="projects" aria-labelledby="projects-title">
-            <div class="projects-header">
-                <p class="section-kicker">Selected work</p>
+            <div class="projects-header reveal">
+                <p class="section-kicker">02 · Selected work</p>
                 <h2 id="projects-title">My projects</h2>
                 <p class="projects-intro">A selection of software, electronics and product-development work, from early concepts to functional prototypes.</p>
             </div>
@@ -310,102 +326,89 @@
         
         <!-- CERTIFICATES -->
         <section class="certificates" id="certificates">
-            <div class="cert-title" id="cert-title">
+            <div class="section-shell">
+            <div class="cert-title reveal" id="cert-title">
+                <p class="section-kicker">03 · Continuous learning</p>
                 <h2>My certificates</h2>
+                <p>Courses and credentials that support the way I work across software, engineering and communication.</p>
             </div>
-            <!--<div class="cert-line">
-            </div>-->
             <div class="cert-img">
                 <div class="img-box">
-                    <a target="blank" href="https://www.udemy.com/certificate/UC-7d09a59b-4bc8-4233-811b-070e64dd96dc/">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.udemy.com/certificate/UC-7d09a59b-4bc8-4233-811b-070e64dd96dc/">
                           <img src="multimedia/images/certificates/github certificate.jpg" alt="github certificate">
                           <h3>Github & Git</h3>
                     </a>
                 </div>
                 <div class="img-box">
-                    <a target="blank" href="https://www.udemy.com/certificate/UC-08b08878-3a5d-4842-a4e1-03c0f29eda50/">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.udemy.com/certificate/UC-08b08878-3a5d-4842-a4e1-03c0f29eda50/">
                             <img src="multimedia/images/certificates/html css certificate.jpg" alt="html css certificate">
                             <h3>HTML & CSS</h3>
                     </a>
                 </div>
                 <div class="img-box">
-                    <a target="blank" href="https://www.udemy.com/certificate/UC-d1521788-13f4-4530-8172-4ecab67c6343/">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.udemy.com/certificate/UC-d1521788-13f4-4530-8172-4ecab67c6343/">
                             <img src="multimedia/images/certificates/javascript certificate.jpg" alt="javascript certificate">
                             <h3>Javascript</h3>
                     </a>
                 </div>
                 <div class="img-box">
-                    <a target="blank" href="https://www.udemy.com/certificate/UC-38bd9958-d659-4d56-af9f-87dbe8d9bc36/">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.udemy.com/certificate/UC-38bd9958-d659-4d56-af9f-87dbe8d9bc36/">
                             <img src="multimedia/images/certificates/python certificate.jpg" alt="python certificate">
                             <h3>Python</h3>
                     </a>
                 </div>
                 <div class="img-box">
-                    <a target="blank" href="https://www.udemy.com/certificate/UC-91865c42-6a1e-4320-b329-f4a1de51e81c/">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.udemy.com/certificate/UC-91865c42-6a1e-4320-b329-f4a1de51e81c/">
                             <img src="multimedia/images/certificates/bootstrap certificate.jpg" alt="Bootstrap certificate">
                             <h3>Bootstrap</h3>
                     </a>
                 </div>
                 <div class="img-box">
-                    <a target="blank" href="https://www.efset.org/cert/tzyAzC">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.efset.org/cert/tzyAzC">
                             <img src="multimedia/images/certificates/efset certificate-1.jpg" alt="English certificate">
                             <h3>English</h3>
                     </a>
                 </div>
                 <div class="img-box">
-                    <a target="blank" >
+                    <a target="_blank" rel="noopener noreferrer" href="multimedia/images/certificates/minera certificate.pdf">
                             <img src="multimedia/images/certificates/minera certificate-1.jpg" alt="Mining Plant Design certificate">
                             <h3>Mining Plant Design</h3>
                     </a>
                 </div>
             </div>
+            </div>
         </section>
     </article>
-    <!-- ASIDE NAV -->
-    <aside>  
-        
-        <div id="dropdwn" class="dropdwn">
-            <div class="dropbtn-box"><div class="dropbtn"><span id="drop-icon" class="iconify" data-icon="bi:plus-lg"></span></div></div>
-            <div id="span" class="dropdown-content">
-                <a id="last" target="blank" href="https://www.facebook.com/piero.d.saldana"><span class="iconify" data-icon="cib:facebook"></span></a>
-                <a target="blank" href="https://api.whatsapp.com/send?phone=51949515213"><span class="iconify" data-icon="cib:whatsapp"></span></a>
-                <a target="blank" href="https://www.instagram.com/piero199712/"><span class="iconify" data-icon="cib:instagram"></span></a>
-                <a target="blank" href="https://www.linkedin.com/in/pierosc/"><span class="iconify" data-icon="cib:linkedin"></span></a>
-                <a target="blank" href="https://steamcommunity.com/id/dibuqwerty/"><span class="iconify" data-icon="cib:steam"></span></a>
-            </div>
+    <aside class="social-dock" id="dropdwn" aria-label="Social links">
+        <div class="social-dock__links" id="span">
+            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/pierosc/" aria-label="LinkedIn"><span class="iconify" data-icon="cib:linkedin-in"></span></a>
+            <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=51949515213" aria-label="WhatsApp"><span class="iconify" data-icon="cib:whatsapp"></span></a>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/piero199712/" aria-label="Instagram"><span class="iconify" data-icon="cib:instagram"></span></a>
         </div>
+        <button class="dropbtn" type="button" aria-label="Open social links" aria-expanded="false"><span id="drop-icon" class="iconify" data-icon="mdi:share-variant-outline"></span></button>
     </aside>
-    <!-- Footer -->
+
     <footer id="footer">
-        <div class="top-footer">
-            <div class="leftback"></div>
-            <div class="left"></div>
-            <div class="middle"></div>
-            <div class="right"></div>
-            <div class="rightback"></div>
-        </div>
-        <div class="footer-content">
-            <div class="footer-circle">
-                <span class="iconify" data-icon="eos-icons:rotating-gear"></span>
+        <div class="footer-hex" aria-hidden="true"></div>
+        <div class="footer-shell">
+            <div class="footer-cta reveal">
+                <p class="section-kicker">04 · Let’s collaborate</p>
+                <h2>Have an idea worth <em>building?</em></h2>
+                <p>I’m interested in software, automation and product challenges where different disciplines need to work together.</p>
+                <a class="button button--light" target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=51949515213">Start a conversation <span class="iconify" data-icon="mdi:arrow-top-right"></span></a>
             </div>
-            <div class="footer-menu">
-                <div class="footer-innermenu">
-                    <a id="a1" target="blank" href="https://www.facebook.com/piero.d.saldana"><span class="iconify" data-icon="cib:facebook"></span></a>
-                    <a id="a2" target="blank" href="https://api.whatsapp.com/send?phone=51949515213"><span class="iconify" data-icon="cib:whatsapp"></span></a>
-                    <a id="a3" target="blank" href="https://www.instagram.com/piero199712/"><span class="iconify" data-icon="cib:instagram"></span></a>
-                    <a id="a4" target="blank" href="https://www.linkedin.com/in/pierosc/"><span class="iconify" data-icon="cib:linkedin"></span></a>
-                    <a id="a5" target="blank" href="https://steamcommunity.com/id/dibuqwerty/"><span class="iconify" data-icon="cib:steam"></span></a>
+            <div class="footer-bottom">
+                <a class="nav-brand nav-brand--footer" href="#home"><span>PS</span><strong>Piero Saldaña</strong></a>
+                <div class="footer-links">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/pierosc/">LinkedIn</a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/piero199712/">Instagram</a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/pierosc">GitHub</a>
                 </div>
+                <p>© <span id="current-year"></span> Piero Saldaña. Built with curiosity.</p>
             </div>
-            
         </div>
     </footer>
 
-    <!--Scroll Reveal-->
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-    <!--SCRIPTS-->
-    <script type="text/javascript" src="scripts/vanilla-tilt.js"></script>
     <script src="scripts/script.js"></script>
 </body>
 </html>
