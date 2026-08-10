@@ -7,11 +7,29 @@ async function render() {
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("http://localhost/", { headers: { accept: "text/html" } }),
+    new Request("http://localhost/star-wars", { headers: { accept: "text/html" } }),
     { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
     { waitUntil() {}, passThroughOnException() {} },
   );
 }
+
+async function renderRoot() {
+  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
+  workerUrl.searchParams.set("root-test", `${process.pid}-${Date.now()}`);
+  const { default: worker } = await import(workerUrl.href);
+
+  return worker.fetch(
+    new Request("http://localhost/", { headers: { accept: "text/html" }, redirect: "manual" }),
+    { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
+    { waitUntil() {}, passThroughOnException() {} },
+  );
+}
+
+test("redirige la portada a /star-wars", async () => {
+  const response = await renderRoot();
+  assert.ok([301, 302, 303, 307, 308].includes(response.status));
+  assert.equal(new URL(response.headers.get("location"), "http://localhost").pathname, "/star-wars");
+});
 
 test("renderiza la experiencia cinematográfica", async () => {
   const response = await render();

@@ -16,7 +16,7 @@ workerUrl.searchParams.set("pages-export", `${process.pid}-${Date.now()}`);
 const { default: worker } = await import(workerUrl.href);
 
 const response = await worker.fetch(
-  new Request("https://pierosc.github.io/", {
+  new Request("https://pierosc.github.io/star-wars", {
     headers: { accept: "text/html" },
   }),
   {
@@ -35,8 +35,10 @@ if (!response.ok) {
 }
 
 const html = await response.text();
+await mkdir(resolve(outputDirectory, "star-wars"), { recursive: true });
+
 await Promise.all([
-  writeFile(resolve(outputDirectory, "index.html"), html, "utf8"),
+  writeFile(resolve(outputDirectory, "star-wars", "index.html"), html, "utf8"),
   writeFile(resolve(outputDirectory, "404.html"), html, "utf8"),
   writeFile(resolve(outputDirectory, ".nojekyll"), "", "utf8"),
 ]);
