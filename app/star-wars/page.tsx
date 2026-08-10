@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { chapters, majorChapters, site } from "../story";
 
+const INITIAL_VOLUME = 0.55;
+
 function Starfield({ warp }: { warp: boolean }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -77,8 +79,8 @@ export default function Home() {
   const [active, setActive] = useState(0);
   const [warp, setWarp] = useState(true);
   const [sound, setSound] = useState(false);
-  const audioRef = useRef<AudioContext | null>(null);
-  const oscillatorRef = useRef<OscillatorNode | null>(null);
+  const [volume, setVolume] = useState(INITIAL_VOLUME);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const total = chapters.length + 1;
   const activeScene = active > 0 ? chapters[active - 1] : null;
 
@@ -124,30 +126,61 @@ export default function Home() {
     return () => window.clearTimeout(timer);
   }, [active]);
 
-  const toggleSound = () => {
-    if (sound) {
-      oscillatorRef.current?.stop();
-      oscillatorRef.current = null;
-      audioRef.current?.close();
-      audioRef.current = null;
-      setSound(false);
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.volume = INITIAL_VOLUME;
+
+    const removePlaybackUnlock = () => {
+      window.removeEventListener("pointerdown", unlockPlayback);
+      window.removeEventListener("keydown", unlockPlayback);
+    };
+
+    const startPlayback = async () => {
+      try {
+        await audio.play();
+        removePlaybackUnlock();
+      } catch (error) {
+        if (error instanceof DOMException && error.name === "NotAllowedError") {
+          window.addEventListener("pointerdown", unlockPlayback, { once: true });
+          window.addEventListener("keydown", unlockPlayback, { once: true });
+        }
+      }
+    };
+
+    function unlockPlayback() {
+      void startPlayback();
+    }
+
+    void startPlayback();
+
+    return () => {
+      removePlaybackUnlock();
+      audio.pause();
+    };
+  }, []);
+
+  const toggleSound = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (!audio.paused) {
+      audio.pause();
       return;
     }
-    const AudioCtx = window.AudioContext || window.webkitAudioContext;
-    const audio = new AudioCtx();
-    const oscillator = audio.createOscillator();
-    const gain = audio.createGain();
-    const filter = audio.createBiquadFilter();
-    oscillator.type = "sawtooth";
-    oscillator.frequency.value = 42;
-    gain.gain.value = 0.018;
-    filter.type = "lowpass";
-    filter.frequency.value = 135;
-    oscillator.connect(filter).connect(gain).connect(audio.destination);
-    oscillator.start();
-    audioRef.current = audio;
-    oscillatorRef.current = oscillator;
-    setSound(true);
+
+    try {
+      await audio.play();
+    } catch {
+      setSound(false);
+    }
+  };
+
+  const changeVolume = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const nextVolume = Number(event.target.value);
+    setVolume(nextVolume);
+    if (audioRef.current) audioRef.current.volume = nextVolume;
   };
 
   const onPointerMove = (event: React.PointerEvent<HTMLElement>) => {
@@ -164,6 +197,16 @@ export default function Home() {
 
   return (
     <main className="story" onPointerMove={onPointerMove} onPointerLeave={onPointerLeave}>
+      {/* Background music has no spoken content to caption. */}
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+      <audio
+        ref={audioRef}
+        src="/audio/star-wars-theme.mp3"
+        preload="auto"
+        loop
+        onPlay={() => setSound(true)}
+        onPause={() => setSound(false)}
+      />
       <Starfield warp={warp} />
       <div className={`warp-flash ${warp ? "is-warping" : ""}`} aria-hidden="true" />
 
@@ -176,10 +219,26 @@ export default function Home() {
           <span className="chapter-counter">
             {String(active + 1).padStart(2, "0")} <i /> {String(total).padStart(2, "0")}
           </span>
-          <button className={`sound-button ${sound ? "is-on" : ""}`} onClick={toggleSound} aria-label={sound ? "Desactivar sonido ambiental" : "Activar sonido ambiental"}>
-            <span className="sound-bars" aria-hidden="true"><i /><i /><i /></span>
-            {sound ? "SONIDO ON" : "SONIDO OFF"}
-          </button>
+          <div className="audio-controls">
+            <button className={`sound-button ${sound ? "is-on" : ""}`} onClick={toggleSound} aria-label={sound ? "Pausar tema musical" : "Reproducir tema musical"}>
+              <span className="sound-bars" aria-hidden="true"><i /><i /><i /></span>
+              {sound ? "SONIDO ON" : "SONIDO OFF"}
+            </button>
+            <label className="volume-control">
+              <span>VOLUMEN</span>
+              <input
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value={volume}
+                onChange={changeVolume}
+                aria-label="Volumen del tema musical"
+                aria-valuetext={`${Math.round(volume * 100)}%`}
+                style={{ "--volume": `${volume * 100}%` } as React.CSSProperties}
+              />
+            </label>
+          </div>
         </div>
       </header>
 
@@ -201,7 +260,6 @@ export default function Home() {
         <div className="intro-orbit orbit-one" aria-hidden="true" />
         <div className="intro-orbit orbit-two" aria-hidden="true" />
         <div className="intro-content">
-          <p className="kicker"><span /> {site.introEyebrow.replace("{count}", String(chapters.length))} <span /></p>
           <div className="title-lockup" aria-label={site.metadataTitle}>
             <div className="title-logo" aria-hidden="true">
               <span className="title-line title-star">{site.titleLine1}</span>
@@ -244,8 +302,4 @@ export default function Home() {
       <div className="grain" aria-hidden="true" />
     </main>
   );
-}
-
-declare global {
-  interface Window { webkitAudioContext: typeof AudioContext; }
 }
