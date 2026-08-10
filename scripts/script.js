@@ -3,7 +3,7 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matc
 // Hero typing
 if (window.Typed && document.querySelector(".typing")) {
   new Typed(".typing", {
-    strings: ["a developer", "a mechatronics engineer", "a product maker", "a creative technologist"],
+    strings: ["a software developer", "a frontend developer", "an interactive UI builder", "a creative coder"],
     typeSpeed: reducedMotion ? 0 : 62,
     backSpeed: reducedMotion ? 0 : 34,
     backDelay: 1500,
