@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const protocol = forwardedProtocol ?? (host?.startsWith("localhost") ? "http" : "https");
   const origin = host ? `${protocol}://${host}` : "http://localhost:3000";
   const pageUrl = `${origin}/star-wars`;
-  const imageUrl = `${origin}/og.png`;
+  const imageUrl = `${origin}/og-v2.png`;
 
   return {
     title: site.metadataTitle,
@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: pageUrl,
       title: site.metadataTitle,
       description: site.metadataDescription,
-      images: [{ url: imageUrl, width: 1734, height: 909, alt: site.metadataTitle }],
+      images: [{ url: imageUrl, width: 1731, height: 909, alt: site.metadataTitle }],
     },
     twitter: {
       card: "summary_large_image",

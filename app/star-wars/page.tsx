@@ -198,11 +198,12 @@ export default function Home() {
         <div className="intro-content">
           <p className="kicker"><span /> {site.introEyebrow.replace("{count}", String(chapters.length))} <span /></p>
           <div className="title-lockup" aria-label={site.metadataTitle}>
-            <span className="title-star">{site.titleLine1}</span>
-            <span className="title-wars">{site.titleLine2}</span>
+            <div className="title-logo" aria-hidden="true">
+              <span className="title-line title-star" data-text={site.titleLine1}>{site.titleLine1}</span>
+              <span className="title-line title-wars" data-text={site.titleLine2}>{site.titleLine2}</span>
+            </div>
           </div>
           <h1>{site.subtitle}</h1>
-          <p className="intro-copy">{site.introduction}</p>
           <button className="launch" onClick={() => goTo(1)}><span>{site.launchLabel}</span><i aria-hidden="true">↓</i></button>
           <p className="control-hint">{site.controlHint}</p>
         </div>
@@ -243,4 +244,3 @@ export default function Home() {
 declare global {
   interface Window { webkitAudioContext: typeof AudioContext; }
 }
-

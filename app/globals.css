@@ -189,24 +189,51 @@ button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 
 .title-lockup {
   margin: 32px auto 6px;
-  width: min(84vw, 690px);
+  width: min(84vw, 720px);
+  perspective: 900px;
+  transform: rotateX(calc(var(--my) * -5deg)) rotateY(calc(var(--mx) * 7deg));
+  transform-style: preserve-3d;
+  transition: transform .16s ease-out;
+}
+.title-logo {
   display: flex;
   flex-direction: column;
-  color: transparent;
-  -webkit-text-stroke: 2px var(--gold);
-  filter: drop-shadow(0 0 16px rgba(242,211,91,.2));
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  align-items: center;
+  gap: clamp(12px, 1.5vw, 20px);
+  color: #05060b;
+  filter: drop-shadow(0 0 18px rgba(242,211,91,.2)) drop-shadow(0 20px 28px rgba(0,0,0,.72));
+  font-family: "Arial Black", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 900;
-  line-height: .67;
-  letter-spacing: -.055em;
-  transform: perspective(800px) rotateX(calc(var(--my) * -2deg)) rotateY(calc(var(--mx) * 2deg));
-  transition: transform .12s linear;
+  line-height: .72;
+  letter-spacing: -.075em;
+  transform-style: preserve-3d;
+  animation: logoFloat 6s ease-in-out infinite;
 }
-.title-star { font-size: clamp(76px, 13vw, 150px); }
-.title-wars { font-size: clamp(92px, 16vw, 184px); }
+.title-line {
+  position: relative;
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  color: #05060b;
+  -webkit-text-stroke: clamp(2px, .28vw, 4px) var(--gold);
+  paint-order: stroke fill;
+  text-shadow: 0 2px 0 #d5aa28, 0 4px 0 #8f6c12;
+  transform: translateZ(22px);
+  transform-style: preserve-3d;
+}
+.title-line::before {
+  content: attr(data-text);
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  color: #5f470c;
+  -webkit-text-stroke: clamp(2px, .28vw, 4px) #9c7616;
+  transform: translate3d(8px, 10px, -22px);
+  opacity: .78;
+}
+.title-star { font-size: clamp(72px, 12vw, 138px); }
+.title-wars { font-size: clamp(76px, 12.8vw, 148px); }
 .intro h1 { margin: 28px 0 18px; color: #e8edf5; font: 400 clamp(14px, 2vw, 22px)/1 var(--font-geist-sans), sans-serif; letter-spacing: .48em; }
-.intro-copy { width: min(100%, 650px); margin: 0 auto; color: #a4adbb; font: 400 clamp(14px, 1.2vw, 17px)/1.8 var(--font-geist-sans), sans-serif; }
-.intro-copy em { color: #e7ebf2; font-style: normal; }
 .launch {
   position: relative;
   margin-top: 34px;
@@ -297,6 +324,10 @@ button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 @keyframes warpFlash { 0% { opacity: 0; transform: scale(.2); } 28% { opacity: .9; } 100% { opacity: 0; transform: scale(2.4); } }
 @keyframes soundBar { to { height: 15px; } }
 @keyframes nebulaBreath { to { opacity: .9; transform: scale(1.1) rotate(2deg); } }
+@keyframes logoFloat {
+  0%, 100% { transform: translate3d(0, 0, 0) rotateX(1.5deg) rotateZ(-.25deg); }
+  50% { transform: translate3d(0, -8px, 18px) rotateX(-1.5deg) rotateZ(.25deg); }
+}
 @keyframes orbitSpin { to { transform: rotate(346deg); } }
 @keyframes orbitSpinReverse { to { transform: rotate(-338deg); } }
 @keyframes crawlMove { from { transform: translate(-50%, 90%) perspective(340px) rotateX(64deg); } to { transform: translate(-50%, -125%) perspective(340px) rotateX(64deg); } }
@@ -323,7 +354,6 @@ button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
   .intro-content { padding: 74px 24px 56px 48px; }
   .title-lockup { margin-top: 26px; }
   .intro h1 { font-size: 11px; line-height: 1.6; letter-spacing: .28em; }
-  .intro-copy { font-size: 13px; line-height: 1.65; }
   .kicker { font-size: 7px; gap: 8px; }
   .kicker span { width: 22px; }
   .crawl { display: none; }
