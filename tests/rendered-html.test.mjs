@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render() {
@@ -51,4 +52,17 @@ test("renderiza la experiencia cinematográfica", async () => {
   assert.match(html, /Rex vuelve a la lucha/i);
   assert.match(html, /La Orden 66/i);
   assert.doesNotMatch(html, /codex-preview|loading skeleton|react-loading-skeleton/i);
+});
+
+test("exporta recursos compatibles con GitHub Pages", async () => {
+  const htmlUrl = new URL("../pages-out/star-wars/index.html", import.meta.url);
+  const html = await readFile(htmlUrl, "utf8");
+
+  assert.match(html, /(?:href|src)="\/star-wars\/assets\//);
+  assert.doesNotMatch(html, /(?:href|src)="\/_next\//);
+  assert.doesNotMatch(html, /http:\/\/localhost/);
+
+  const stylesheet = html.match(/href="(\/star-wars\/assets\/static\/css\/[^"]+\.css)"/)?.[1];
+  assert.ok(stylesheet, "la exportacion debe enlazar una hoja de estilos");
+  await access(new URL(`../pages-out${stylesheet}`, import.meta.url));
 });
