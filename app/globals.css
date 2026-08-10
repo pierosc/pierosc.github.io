@@ -5,6 +5,8 @@
   --foreground: #f5f2e8;
   --muted: #9aa4b7;
   --gold: #f2d35b;
+  --font-geist-sans: Arial;
+  --font-geist-mono: "Courier New";
 }
 
 * { box-sizing: border-box; }
@@ -278,7 +280,7 @@ button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 
 .chapter-layout { position: relative; z-index: 5; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 95px) minmax(480px, 800px); align-items: center; gap: clamp(18px, 3vw, 52px); width: min(94vw, 1320px); margin: 0 auto; padding: 92px 40px 72px 65px; }
 .chapter-number { align-self: start; padding-top: 9vh; color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.16); font: 800 clamp(58px, 7vw, 100px)/1 var(--font-geist-mono), monospace; writing-mode: vertical-rl; letter-spacing: -.12em; opacity: .75; }
-.chapter-card { position: relative; max-height: calc(100svh - 150px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--accent) transparent; padding: clamp(24px, 2.7vw, 40px); border: 1px solid rgba(255,255,255,.13); background: linear-gradient(135deg, rgba(7,9,17,.88), rgba(7,9,17,.6)); backdrop-filter: blur(19px) saturate(1.15); clip-path: polygon(0 0, calc(100% - 34px) 0, 100% 34px, 100% 100%, 0 100%); transform: translateY(38px); opacity: 0; transition: transform .9s .12s cubic-bezier(.2,.8,.2,1), opacity .8s .12s; }
+.chapter-card { position: relative; max-height: calc(100svh - 140px); overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--accent) transparent; padding: clamp(24px, 2.7vw, 40px); border: 1px solid rgba(255,255,255,.13); background: linear-gradient(135deg, rgba(7,9,17,.88), rgba(7,9,17,.6)); backdrop-filter: blur(19px) saturate(1.15); clip-path: polygon(0 0, calc(100% - 34px) 0, 100% 34px, 100% 100%, 0 100%); transform: translateY(38px); opacity: 0; transition: transform .9s .12s cubic-bezier(.2,.8,.2,1), opacity .8s .12s; }
 .chapter-card::-webkit-scrollbar { width: 3px; }
 .chapter-card::-webkit-scrollbar-thumb { background: var(--accent); }
 .has-focus .chapter-card { border-color: color-mix(in srgb, var(--accent) 45%, rgba(255,255,255,.12)); box-shadow: 0 0 60px color-mix(in srgb, var(--accent) 9%, transparent); }

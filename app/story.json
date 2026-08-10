@@ -1,14 +1,14 @@
 {
   "site": {
     "metadataTitle": "Star Wars · El legado de la Fuerza",
-    "metadataDescription": "Una experiencia cinematográfica interactiva que recorre la saga de Star Wars desde el Episodio I hasta el Episodio VI.",
+    "metadataDescription": "Una experiencia cinematográfica interactiva que recorre la saga de Star Wars desde el Episodio I hasta el Episodio VI, con The Clone Wars, el ascenso del Imperio, Rebels y Rogue One.",
     "brandShort": "SW",
     "brand": "ARCHIVOS DE LA FUERZA",
     "titleLine1": "STAR",
     "titleLine2": "WARS",
     "subtitle": "EL LEGADO DE LA FUERZA",
     "introEyebrow": "UNA HISTORIA EN {count} ARCHIVOS",
-    "introduction": "Una narración extensa de los Episodios I al VI y Obi-Wan Kenobi, con archivos especiales dedicados a Rex y Ahsoka dentro de The Clone Wars y Rebels.",
+    "introduction": "Una narración de los Episodios I al VI con archivos especiales sobre el ejército clon, Satine y Obi-Wan, Maul en Mandalore, Ahsoka y Rex, los Inquisidores, los planes secretos de Palpatine, la formación de la Alianza Rebelde y la misión de Rogue One.",
     "launchLabel": "INICIAR EL VIAJE",
     "controlHint": "Desliza · usa las flechas · selecciona una era",
     "crawl": [
@@ -48,9 +48,19 @@
       "glyph": "OW"
     },
     {
+      "id": "empire",
+      "label": "El Imperio",
+      "glyph": "IMP"
+    },
+    {
       "id": "rebels",
       "label": "Star Wars Rebels",
       "glyph": "R"
+    },
+    {
+      "id": "rogue-one",
+      "label": "Rogue One",
+      "glyph": "RO"
     },
     {
       "id": "ep4",
@@ -196,36 +206,78 @@
       "glyph": "II"
     },
     {
-      "id": "cw-resumen",
+      "id": "cw-clone-army",
       "group": "clone-wars",
-      "eyebrow": "The Clone Wars · Panorama general",
-      "title": "Tres años de guerra",
+      "eyebrow": "The Clone Wars · Historia esencial 1 de 8",
+      "title": "Así se organizaba el Ejército Clon",
       "year": "22—19 ABY",
-      "era": "Resumen del conflicto galáctico",
+      "era": "Jedi generales y soldados creados para la guerra",
       "paragraphs": [
-        "La República y los separatistas combaten en cientos de mundos. Anakin se convierte en caballero y recibe como padawan a Ahsoka Tano; Obi-Wan dirige campañas decisivas; Dooku, Grievous y Ventress sostienen el frente enemigo. Los Jedi ganan batallas, pero cada emergencia concede más poder a Palpatine.",
-        "Sidious controla a los dos bandos: prolonga la guerra, debilita las instituciones y normaliza la presencia militar. En paralelo, Maul regresa, conquista Mandalore y crea un poder criminal propio. La guerra no busca una victoria separatista o republicana; busca que la galaxia acepte el Imperio como solución."
+        "La República convirtió a los Jedi en generales del Gran Ejército. Cada uno dirigía formaciones clon y dependía de oficiales criados para traducir su estrategia en órdenes de campo: comandantes al frente de grandes unidades y capitanes al mando de compañías. Esa cadena creó vínculos personales, pero también dejó a los Jedi atrapados dentro de la guerra diseñada por Palpatine.",
+        "Anakin encabezó la Legión 501 con el capitán Rex; Obi-Wan combatió junto al 212.º Batallón de Ataque y el comandante Cody. Para el asedio de Mandalore, una fuerza de la 501 adoptó los colores de Ahsoka y pasó a conocerse como la 332.ª, dirigida por Rex. Esa es la unidad correcta —332.ª, no 322.ª— y siguió considerándolo su comandante aun cuando Ahsoka ya no pertenecía a la Orden Jedi."
       ],
-      "quote": "Cada victoria militar acerca a la República al resultado que Sidious planeó desde el comienzo.",
+      "quote": "La estructura unía a un general Jedi con oficiales clon, pero Palpatine controlaba el propósito final de todo el ejército.",
       "beats": [
-        "Jedi convertidos en generales",
-        "Regreso de Maul",
-        "Palpatine acumula poder"
+        "Anakin · Rex · Legión 501",
+        "Obi-Wan · Cody · Batallón 212",
+        "Ahsoka · Rex · unidad 332"
+      ],
+      "color": "#35caae",
+      "image": "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=2200&q=90",
+      "glyph": "GAR"
+    },
+    {
+      "id": "cw-satine",
+      "group": "clone-wars",
+      "eyebrow": "The Clone Wars · Historia esencial 2 de 8",
+      "title": "Satine y Obi-Wan: amor y deber",
+      "year": "Antes de 22 ABY",
+      "era": "Un amor marcado por el deber",
+      "paragraphs": [
+        "Cuando Obi-Wan todavía era padawan, él y Qui-Gon protegieron a la duquesa Satine Kryze durante una guerra civil mandaloriana. Obi-Wan y Satine se enamoraron mientras huían juntos: años después él admite que habría abandonado la Orden Jedi si ella se lo hubiera pedido. Ninguno lo hizo; él eligió su juramento y ella la reconstrucción de Mandalore.",
+        "Satine intentó romper con el pasado guerrero de su pueblo mediante un gobierno pacifista y neutral. Durante las Guerras Clon dirigió el Consejo de Sistemas Neutrales, mientras la Guardia de la Muerte, apoyada primero por Dooku, trataba de restaurar la antigua cultura militar. Obi-Wan siguió protegiéndola, pero no podía resolver la contradicción entre su amor personal y su deber como Jedi."
+      ],
+      "quote": "Satine y Obi-Wan se aman, pero convierten ese amor en una renuncia: gobernar Mandalore y servir a la Orden.",
+      "beats": [
+        "Protección durante la guerra civil",
+        "La promesa que nunca hicieron",
+        "Neutralidad frente a la Guardia de la Muerte"
       ],
       "color": "#4de0c1",
       "image": "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=2200&q=90",
-      "glyph": "CW"
+      "glyph": "S+O"
+    },
+    {
+      "id": "cw-maul-mandalore",
+      "group": "clone-wars",
+      "eyebrow": "The Clone Wars · Historia esencial 3 de 8",
+      "title": "Maul conquista Mandalore",
+      "year": "20—19 ABY",
+      "era": "La conquista de la Sombra Colectiva",
+      "paragraphs": [
+        "Savage Opress encuentra a Maul con vida y Madre Talzin restaura su mente y su cuerpo. Obsesionado con vengarse de Obi-Wan, Maul une a la Guardia de la Muerte, los Pykes, Sol Negro y los hutts en la Sombra Colectiva. Sus criminales atacan Sundari y la Guardia de la Muerte aparece como salvadora: la población acepta el golpe y Satine es depuesta.",
+        "Pre Vizsla intenta traicionarlo, pero Maul lo mata en un duelo, reclama el Sable Oscuro y gobierna mediante Almec. Bo-Katan se niega a obedecer a un forastero y provoca una guerra civil. Maul usa a Satine para atraer a Obi-Wan y la asesina ante él. Sidious mata después a Savage y captura a Maul; sus leales lo rescatan, pero su imperio criminal comienza a fragmentarse."
+      ],
+      "quote": "Maul fabrica una crisis y logra que Mandalore entregue el poder a sus supuestos salvadores.",
+      "beats": [
+        "Nacimiento de la Sombra Colectiva",
+        "Duelo por el Sable Oscuro",
+        "Muerte de Satine y llegada de Sidious"
+      ],
+      "color": "#42d8bb",
+      "image": "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=2200&q=90",
+      "glyph": "M"
     },
     {
       "id": "cw-rex",
       "group": "clone-wars",
-      "eyebrow": "The Clone Wars · Archivo prioritario 1 de 3",
+      "eyebrow": "The Clone Wars · Archivo prioritario 4 de 8",
       "title": "Rex aprende a elegir",
       "year": "22—19 ABY",
       "era": "De soldado perfecto a hombre libre",
       "paragraphs": [
         "Rex es el capitán de la Legión 501 y el oficial clon más cercano a Anakin y Ahsoka. Al principio cree que obedecer y cumplir la misión son la misma cosa. Sin embargo, conocer al desertor Cut Lawquane, perder hermanos en incontables campañas y dirigir soldados con nombres, temores y opiniones propias lo obliga a reconocer que los clones son personas, no material reemplazable.",
-        "En Umbara, el general Pong Krell desprecia la vida clon y ordena ataques inútiles. Rex intenta obedecer hasta descubrir que Krell provoca deliberadamente que clones disparen contra clones. Después, Fives descubre los chips inhibidores implantados en todos ellos y muere antes de poder exponer el plan. Rex no logra salvarlo, pero conserva la advertencia; ese recuerdo será la única pista capaz de salvarlo durante la Orden 66."
+        "En Umbara, el general Pong Krell desprecia la vida clon y provoca deliberadamente que clones disparen contra clones. Rex aprende que una orden legal también puede ser injusta. Después, Fives descubre los chips inhibidores y muere antes de exponer el plan; Rex no logra salvarlo, pero conserva su advertencia. Ese recuerdo será la pista que permitirá liberarlo durante la Orden 66."
       ],
       "quote": "Rex no abandona la disciplina: aprende que la verdadera lealtad también exige desobedecer una orden injusta.",
       "beats": [
@@ -239,19 +291,41 @@
       "focus": "REX"
     },
     {
+      "id": "cw-ahsoka-training",
+      "group": "clone-wars",
+      "eyebrow": "The Clone Wars · Archivo prioritario 5 de 8",
+      "title": "Ahsoka entrena contra la 501",
+      "year": "22—19 ABY",
+      "era": "La práctica que salvará a Ahsoka",
+      "paragraphs": [
+        "Ahsoka supera con facilidad una prueba del Templo contra remotos de entrenamiento, pero Anakin considera que las máquinas son demasiado predecibles para una guerra real. Pide a Rex y a varios soldados de la 501 que la rodeen y disparen munición aturdidora desde todos los ángulos. Ahsoka cae una y otra vez; Anakin insiste en que se levante y repita el ejercicio.",
+        "Con los años, Ahsoka aprende a leer a tiradores coordinados, mantener la defensa mientras se mueve y resistir aun después de ser derribada. La dureza de Anakin parecía excesiva, pero preparó a su padawan para el enemigo que nadie imaginaba: cuando los clones la cercan durante la Orden 66, sobrevive gracias a los reflejos construidos en esas mismas sesiones."
+      ],
+      "quote": "Anakin no la prepara para una prueba Jedi, sino para sobrevivir a una guerra sin reglas.",
+      "beats": [
+        "Los remotos no bastan",
+        "Rex y la 501 disparan",
+        "La práctica anticipa la Orden 66"
+      ],
+      "color": "#64f8e8",
+      "image": "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=2200&q=90",
+      "glyph": "A",
+      "focus": "AHSOKA"
+    },
+    {
       "id": "cw-ahsoka",
       "group": "clone-wars",
-      "eyebrow": "The Clone Wars · Archivo prioritario 2 de 3",
+      "eyebrow": "The Clone Wars · Archivo prioritario 6 de 8",
       "title": "Ahsoka deja la Orden",
-      "year": "22—19 ABY",
-      "era": "Crecer dentro de una institución en guerra",
+      "year": "19 ABY",
+      "era": "La institución deja de merecer su confianza",
       "paragraphs": [
-        "Ahsoka comienza como una padawan impulsiva de catorce años. Anakin le enseña a improvisar y confiar en sí misma; Rex le enseña a responsabilizarse por las vidas bajo su mando. Después de perder gran parte de un escuadrón por desobedecer una retirada, comprende que ser valiente no significa ignorar las consecuencias. Sus campañas la convierten en una comandante respetada por los clones.",
-        "Cuando una bomba explota en el Templo Jedi, Barriss Offee incrimina a Ahsoka. El Consejo la expulsa y permite que sea juzgada por la República. Anakin descubre a la verdadera responsable y limpia su nombre, pero la absolución llega demasiado tarde: Ahsoka entiende que la Orden confió más en la presión política que en ella. Rechaza regresar, se despide de Anakin y escoge una identidad fuera de los Jedi."
+        "Ahsoka crece de padawan impulsiva a comandante respetada. Anakin le enseña a improvisar y Rex a responsabilizarse por las vidas bajo su mando. La guerra, sin embargo, también le muestra a una Orden cada vez más subordinada al Senado y más acostumbrada a tratar decisiones militares como si fueran decisiones morales.",
+        "Cuando Barriss Offee la incrimina por el atentado del Templo, el Consejo expulsa a Ahsoka y permite que la República la juzgue. Anakin descubre a la verdadera responsable y limpia su nombre, pero la absolución llega demasiado tarde: Ahsoka rechaza regresar porque el Consejo confió antes en la presión política que en ella. Abandona el rango Jedi, no su compromiso con la luz."
       ],
-      "quote": "Ahsoka pierde su rango, pero gana la capacidad de decidir qué significa servir a la luz.",
+      "quote": "Ahsoka pierde su rango, pero gana la capacidad de decidir por sí misma qué significa servir a la luz.",
       "beats": [
-        "Aprender a comandar",
+        "Comandante de la 501",
         "El atentado del Templo",
         "La despedida de Anakin"
       ],
@@ -261,20 +335,42 @@
       "focus": "AHSOKA"
     },
     {
-      "id": "cw-mandalore",
+      "id": "cw-siege-mandalore",
       "group": "clone-wars",
-      "eyebrow": "The Clone Wars · Archivo prioritario 3 de 3",
-      "title": "Ahsoka y Rex sobreviven",
+      "eyebrow": "The Clone Wars · Archivo prioritario 7 de 8",
+      "title": "Ahsoka derrota a Maul en Mandalore",
       "year": "19 ABY",
-      "era": "Mandalore y la Orden 66",
+      "era": "El asedio y el aprendiz fantasma",
       "paragraphs": [
-        "Bo-Katan pide ayuda para expulsar a Maul de Mandalore. Anakin devuelve a Ahsoka sus sables y la 501 crea la Compañía 332, pintando sus cascos con los colores de ella. Ahsoka y Rex dirigen el asedio, capturan a Maul y parten para entregarlo. Aunque Ahsoka ya no pertenece a la Orden, sus soldados continúan considerándola su comandante.",
-        "Durante el viaje, Sidious ejecuta la Orden 66. El chip obliga a Rex a apuntar contra Ahsoka, pero él consigue mencionar a Fives antes de perder el control. Ahsoka investiga esa pista, retira el chip de Rex y libera a Maul como distracción. Ambos intentan evitar matar a los clones, aun cuando la nave cae hacia una luna. Escapan en un Y-wing, entierran a sus compañeros y fingen su muerte: su amistad sobrevive al mecanismo creado para destruirla."
+        "Bo-Katan pide ayuda para expulsar a Maul. Anakin y Obi-Wan deben partir a Coruscant, pero entregan a Ahsoka una división de la 501 dirigida por Rex; los clones pintan sus cascos con sus marcas. Maul había provocado el asedio para atraer a Anakin y matarlo, pues ya comprendía que Sidious lo preparaba como nuevo aprendiz. En lugar de Anakin, encuentra a Ahsoka.",
+        "Maul le advierte que la República está a punto de caer y propone una alianza entre dos aprendices abandonados. Ahsoka cree su advertencia sobre Sidious, pero no que Anakin vaya a caer, y se niega. Combaten desde el salón del trono hasta las vigas sobre Sundari. Aunque pierde ambos sables, Ahsoka usa el impulso del arma de Maul para arrojarlo al vacío y lo sostiene con la Fuerza hasta que Rex lo captura."
       ],
-      "quote": "Rex y Ahsoka salen vivos, pero deben dejar atrás al ejército que fue su familia.",
+      "quote": "Maul ve venir la caída de Anakin, pero su odio le impide ofrecer algo mejor que otra alianza basada en el miedo.",
       "beats": [
-        "Asedio de Mandalore",
-        "Activación de los chips",
+        "La Compañía 332",
+        "Oferta de alianza",
+        "Duelo sobre Sundari"
+      ],
+      "color": "#8cfff3",
+      "image": "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=2200&q=90",
+      "glyph": "A×M",
+      "focus": "AHSOKA"
+    },
+    {
+      "id": "cw-order66",
+      "group": "clone-wars",
+      "eyebrow": "The Clone Wars · Archivo prioritario 8 de 8",
+      "title": "Sobrevivir a la Orden 66",
+      "year": "19 ABY",
+      "era": "Rex, Ahsoka y la Orden 66",
+      "paragraphs": [
+        "Mientras trasladan a Maul, Sidious ejecuta la Orden 66. El chip obliga a Rex a apuntar contra Ahsoka, pero él resiste lo suficiente para mencionar a Fives. Rodeada por la 332, Ahsoka aplica exactamente el entrenamiento de Anakin: anticipa fuego coordinado, se mantiene en movimiento y gana tiempo. Después investiga la pista de Fives, retira el chip de Rex y libera a Maul como distracción.",
+        "Maul destruye el hiperimpulsor y condena el crucero. Ahsoka y Rex intentan salvarse sin matar a los soldados que fueron su familia, pero la nave se estrella contra una luna. Escapan en un Y-wing, entierran a los clones y ocultan que sobrevivieron. Ahsoka abandona uno de sus sables entre las tumbas; ambos salen con vida, aunque la República y la 501 que conocían han desaparecido."
+      ],
+      "quote": "El entrenamiento de Anakin salva a Ahsoka; la advertencia de Fives permite salvar a Rex.",
+      "beats": [
+        "Rex consigue decir «Fives»",
+        "Extracción del chip",
         "La tumba de la 332"
       ],
       "color": "#9dfff5",
@@ -371,84 +467,147 @@
       "glyph": "III"
     },
     {
-      "id": "ow-exilio",
+      "id": "ow-inquisitorius",
       "group": "obi-wan",
       "eyebrow": "Obi-Wan Kenobi · Parte 1 de 3",
-      "title": "El Jedi que se ocultó",
-      "year": "9 ABY",
-      "era": "Diez años bajo el Imperio",
+      "title": "Los Inquisidores cazan Jedi",
+      "year": "19—9 ABY",
+      "era": "La policía de la Fuerza de Darth Vader",
       "paragraphs": [
-        "Obi-Wan vive en Tatooine, trabaja en silencio y vigila desde lejos a Luke. Ha cortado su conexión con la Fuerza, sufre pesadillas sobre Anakin y se considera responsable de la caída de la Orden. Cuando el Jedi fugitivo Nari le pide ayuda, Obi-Wan se niega: cree que sobrevivir y proteger a Luke exige dejar de ser quien era.",
-        "La inquisidora Reva conoce el vínculo entre Bail Organa y Obi-Wan, por lo que organiza el secuestro de Leia. Bail le pide rescatarla porque no puede confiar la misión a nadie más. Obi-Wan abandona Tatooine y descubre en Daiyu que la niña de diez años es observadora, obstinada y valiente; protegerla empieza a devolverle el propósito que había perdido."
+        "Después de la Orden 66, Palpatine reúne a antiguos Jedi quebrados o seducidos por el lado oscuro y entrega su mando a Darth Vader. El Gran Inquisidor, un antiguo guardia del Templo, dirige a Hermanos y Hermanas identificados por números. No son Sith ni iguales de Vader: son cazadores reemplazables, obligados a competir por rango mientras eliminan Jedi y buscan niños sensibles a la Fuerza.",
+        "Su método convierte la compasión Jedi en una trampa: amenazan inocentes porque saben que un superviviente terminará revelándose para ayudarlos. Operan desde la Fortaleza Inquisitorius en Nur, cerca de Mustafar y bajo vigilancia de Vader. En la serie actúan el Gran Inquisidor, el Quinto Hermano, la Cuarta Hermana y Reva, la Tercera Hermana, cuya obsesión por Obi-Wan rompe la jerarquía del grupo."
       ],
-      "quote": "Obi-Wan no regresa por una guerra: regresa porque una niña necesita que vuelva a ser Jedi.",
+      "quote": "Los Inquisidores extienden el miedo de Vader hasta cada escondite Jedi.",
       "beats": [
-        "Vigilancia sobre Luke",
-        "Secuestro de Leia",
-        "Viaje a Daiyu"
+        "Antiguos Jedi convertidos en cazadores",
+        "El Gran Inquisidor responde a Vader",
+        "La compasión usada como cebo"
       ],
       "color": "#ffbc69",
       "image": "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=2200&q=90",
-      "glyph": "OW"
+      "glyph": "INQ"
     },
     {
-      "id": "ow-camino",
+      "id": "ow-reva",
       "group": "obi-wan",
       "eyebrow": "Obi-Wan Kenobi · Parte 2 de 3",
-      "title": "El Camino clandestino",
+      "title": "Reva quiere matar a Vader",
       "year": "9 ABY",
-      "era": "Perseguidos por Vader",
+      "era": "La Tercera Hermana y su verdadera misión",
       "paragraphs": [
-        "Reva revela que Anakin sigue vivo. Vader llega a Mapuzo y derrota con facilidad a un Obi-Wan desconectado de la Fuerza, llegando a quemarlo como venganza por Mustafar. Tala, una oficial imperial que trabaja para la red clandestina conocida como el Camino, rescata a Obi-Wan y ayuda a trasladar Jedi y personas sensibles a la Fuerza hacia lugares seguros.",
-        "Leia es capturada y llevada a la Fortaleza Inquisitorius. Obi-Wan entra en la instalación con ayuda de Tala, encuentra los cuerpos preservados de Jedi asesinados y logra escapar con Leia. En Jabiim, Reva los alcanza y revela que sobrevivió al ataque de Anakin en el Templo. No persigue a Vader por lealtad, sino para acercarse lo suficiente como para matarlo."
+        "Reva sobrevivió de niña a la matanza del Templo y vio a Anakin asesinar a sus compañeros. Entró en el Inquisitorius no por lealtad, sino para ganar acceso al responsable. Descubre la relación entre Bail Organa y Obi-Wan, organiza el secuestro de Leia para obligar al Jedi a salir de Tatooine y apuñala al Gran Inquisidor para ocupar su puesto y acercarse todavía más a Vader.",
+        "Vader siempre comprendió su plan. Cuando Reva intenta atacarlo, la domina sin esfuerzo y la atraviesa del mismo modo que durante la Orden 66; luego el Gran Inquisidor reaparece para demostrar que ella nunca controló la organización. Reva sobrevive, pero decide no matar a Luke: rompe el ciclo que convirtió a una víctima del Imperio en otra de sus armas."
       ],
-      "quote": "La persecución obliga a Obi-Wan a mirar de frente aquello que intentó enterrar durante una década.",
+      "quote": "Reva utiliza al Inquisitorius para buscar venganza, pero solo deja de pertenecerle cuando se niega a repetir la violencia de Vader.",
       "beats": [
-        "Vader vuelve a aparecer",
-        "Fortaleza Inquisitorius",
-        "El pasado de Reva"
+        "Superviviente del Templo",
+        "Secuestro para atraer a Obi-Wan",
+        "Vader conocía su traición"
       ],
-      "color": "#ffbc69",
+      "color": "#ffad5c",
       "image": "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=2200&q=90",
-      "glyph": "OW"
+      "glyph": "IIIª"
     },
     {
-      "id": "ow-duelo",
+      "id": "ow-vader",
       "group": "obi-wan",
       "eyebrow": "Obi-Wan Kenobi · Parte 3 de 3",
-      "title": "Maestro contra aprendiz",
+      "title": "Obi-Wan enfrenta dos veces a Vader",
       "year": "9 ABY",
-      "era": "El último enfrentamiento",
+      "era": "De la culpa al último enfrentamiento",
       "paragraphs": [
-        "Obi-Wan atrae a Vader lejos de los refugiados y recupera plenamente su conexión con la Fuerza. Rompe la máscara de Vader y ve por un instante el rostro de Anakin. Vader afirma que él mismo destruyó a Anakin; Obi-Wan comprende que no puede obligarlo a regresar y se despide llamándolo Darth por primera vez.",
-        "Reva intenta matar a Luke para vengarse de Vader, pero se detiene al reconocer que hacerlo la convertiría en aquello que odia. Obi-Wan la ayuda a abandonar ese ciclo. Después devuelve a Leia a Alderaan, le habla de las cualidades heredadas de sus padres y regresa a Tatooine con una nueva serenidad. Owen le permite conocer a Luke y el espíritu de Qui-Gon finalmente se manifiesta para continuar su entrenamiento."
+        "Reva revela que Anakin sigue vivo y conduce a Vader hasta Obi-Wan. En Mapuzo, el antiguo maestro está desconectado de la Fuerza, apenas puede defenderse y trata de escapar. Vader lo arrastra por el fuego para devolverle el sufrimiento de Mustafar. El primer duelo no busca decidir quién es mejor: muestra que Obi-Wan sigue paralizado por la culpa y que Vader ha convertido su dolor en dominio.",
+        "En el encuentro final, Obi-Wan atrae a Vader lejos de los refugiados y recupera su conexión con la Fuerza. Resiste después de ser sepultado, daña el respirador y rompe la máscara. Ante el rostro de Anakin pide perdón, pero Vader afirma que él mismo mató a Anakin. Obi-Wan comprende que no creó a Vader ni puede salvarlo por la fuerza; deja de cargar con esa culpa y se despide llamándolo «Darth»."
       ],
-      "quote": "Obi-Wan no recupera a Anakin, pero recupera la esperanza necesaria para cuidar a sus hijos.",
+      "quote": "Obi-Wan no vence recuperando a Anakin: vence cuando deja de permitir que Vader defina toda su vida.",
       "beats": [
+        "Derrota y fuego en Mapuzo",
         "La máscara rota",
-        "Reva perdona a Luke",
-        "Regreso de Qui-Gon"
+        "Obi-Wan abandona la culpa"
       ],
       "color": "#ffbc69",
       "image": "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=2200&q=90",
-      "glyph": "OW"
+      "glyph": "OW×V"
     },
     {
-      "id": "rebels-resumen",
+      "id": "empire-palpatine",
+      "group": "empire",
+      "eyebrow": "El Imperio · Plan 1 de 3",
+      "title": "El plan imperial de Palpatine",
+      "year": "19—0 ABY",
+      "era": "Gobernar mediante miedo, dependencia y secretos",
+      "paragraphs": [
+        "Palpatine presentó la caída de los Jedi como un intento de golpe y convirtió sus poderes de emergencia en una dictadura. Conservó el Senado como apariencia de legalidad mientras gobernadores, ejército, inteligencia e Inquisidores eliminaban cualquier oposición. Vader era su ejecutor: destruía supervivientes Jedi y recordaba a todos que la voluntad del Emperador estaba por encima de la ley.",
+        "Su objetivo no era solo conquistar territorios, sino hacer imposible que la galaxia imaginara otra autoridad. La Estrella de la Muerte debía reemplazar la negociación por el terror de destruir planetas; cuando estuvo lista, Palpatine disolvió el Senado. En paralelo financió proyectos secretos de clonación porque tampoco aceptaba que su dominio terminara con su propia muerte."
+      ],
+      "quote": "El Imperio debía depender de una sola persona y sobrevivir a cualquier límite político, militar o biológico.",
+      "beats": [
+        "La República convertida en dictadura",
+        "Vader e Inquisidores como ejecutores",
+        "Estrella de la Muerte e inmortalidad"
+      ],
+      "color": "#d84b63",
+      "image": "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=2200&q=90",
+      "glyph": "IMP"
+    },
+    {
+      "id": "empire-stormtroopers",
+      "group": "empire",
+      "eyebrow": "El Imperio · Plan 2 de 3",
+      "title": "De clones a stormtroopers",
+      "year": "19—16 ABY",
+      "era": "Proyecto War-Mantle",
+      "paragraphs": [
+        "Tras la Orden 66, los soldados clon pasaron a servir al Imperio y fueron llamados stormtroopers, pero Palpatine ya preparaba su reemplazo. War-Mantle reclutó personas nacidas por toda la galaxia: costaban aproximadamente la mitad, eran una fuente casi ilimitada y podían ser entrenadas para obedecer al régimen. En Daro, cincuenta comandos clon comenzaron a formar a mil reclutas TK.",
+        "La Ley de Reclutamiento de Defensa hizo oficial la transición. Palpatine ordenó destruir Tipoca City, culpó a Rampart y usó el desastre para retirar a los clones sin reconocerles derechos ni futuro. Algunos quedaron como instructores o unidades especiales, otros fueron abandonados y varios se rebelaron. Con el tiempo, la armadura blanca ya no identificó a copias de Jango Fett, sino a reclutas imperiales."
+      ],
+      "quote": "El Imperio sustituyó soldados unidos por una misma historia por una población reclutable, más barata y controlable.",
+      "beats": [
+        "War-Mantle y reclutas TK",
+        "Destrucción de Kamino",
+        "Los clones son retirados"
+      ],
+      "color": "#ee5c64",
+      "image": "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=2200&q=90",
+      "glyph": "TK"
+    },
+    {
+      "id": "empire-necromancer",
+      "group": "empire",
+      "eyebrow": "El Imperio · Plan 3 de 3",
+      "title": "Proyecto Nigromante: clonar la Fuerza",
+      "year": "19 ABY en adelante",
+      "era": "El secreto de Monte Tantiss",
+      "paragraphs": [
+        "Palpatine ordenó a la División de Ciencia Avanzada de Hemlock reutilizar la tecnología kaminoana en Monte Tantiss. Proyecto Nigromante buscaba transferir y replicar un M-count elevado —la medida del potencial de conexión con la Fuerza— dentro de un cuerpo clonado sin que se degradara. No era un plan para fabricar un ejército de Jedi: era un problema biológico ligado al interés personal del Emperador por vencer la muerte.",
+        "Hemlock encarceló niños sensibles a la Fuerza y experimentó con muestras clon. Omega resultó ser el único «vínculo» capaz de reproducir el M-count, por eso el Imperio la perseguía aunque ella no fuera una Jedi. Omega liberó a los niños y Nala Se destruyó la investigación de Tantiss; el proyecto perdió décadas, pero la búsqueda continuó hasta los experimentos que permitieron a Sidious regresar en un cuerpo clonado imperfecto en Exegol."
+      ],
+      "quote": "Palpatine no quería copiar a un Jedi: quería construir un recipiente capaz de conservar su propio poder.",
+      "beats": [
+        "Transferir un M-count sin degradación",
+        "Omega era el vínculo viable",
+        "De Tantiss al regreso en Exegol"
+      ],
+      "color": "#ff6a68",
+      "image": "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=2200&q=90",
+      "glyph": "M+"
+    },
+    {
+      "id": "rebels-alliance",
       "group": "rebels",
       "eyebrow": "Star Wars Rebels · Panorama general",
-      "title": "La familia del Fantasma",
-      "year": "5—0 ABY",
-      "era": "Resumen de la serie",
+      "title": "Así nace la Alianza Rebelde",
+      "year": "19—2 ABY",
+      "era": "El nacimiento de una rebelión organizada",
       "paragraphs": [
-        "Ezra Bridger, un joven huérfano de Lothal, se une a Hera Syndulla, Kanan Jarrus, Sabine Wren, Zeb y Chopper. Lo que comienza como una pequeña célula que roba suministros y protege civiles termina conectándose con otras redes hasta formar parte de una rebelión organizada.",
-        "Kanan entrena a Ezra, Sabine enfrenta su pasado mandaloriano y Hera se convierte en una dirigente militar. Tras combatir Inquisidores, descubrir proyectos imperiales y sufrir el sacrificio de Kanan, la tripulación libera Lothal. Ezra utiliza a los purrgil para llevarse a Thrawn y desaparece con él, asegurando la victoria del planeta antes de la Batalla de Yavin."
+        "Bail Organa y Mon Mothma prepararon la resistencia desde los últimos días de la República. Bajo el Imperio sostienen redes clandestinas y ayudan a células que todavía operan separadas para que una captura no destruya todo el movimiento. Ahsoka, con el nombre Fulcrum, coordina información entre ellas. La tripulación del Fantasma es una de esas células y, bajo Hera, se integra en el Escuadrón Fénix.",
+        "La masacre de Ghorman lleva a Mon Mothma a denunciar públicamente al Emperador. Hera y Fénix protegen su convoy y su transmisión sobre Dantooine: Mothma pide a los grupos dispersos que dejen de combatir solos. Naves de distintas células responden a la señal y nace la Alianza para Restaurar la República, con mando, flota y objetivo político comunes, aunque persisten tensiones con movimientos como los partisanos de Saw Gerrera."
       ],
-      "quote": "La rebelión galáctica crece porque pequeñas familias deciden que resistir juntas es posible.",
+      "quote": "La Rebelión no aparece de una sola victoria: nace cuando redes secretas aceptan coordinarse bajo una causa común.",
       "beats": [
-        "Ezra se une al Fantasma",
-        "Sacrificio de Kanan",
-        "Liberación de Lothal"
+        "Redes de Bail Organa y Mon Mothma",
+        "Fulcrum conecta las células",
+        "La convocatoria sobre Dantooine"
       ],
       "color": "#ef7dff",
       "image": "https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?auto=format&fit=crop&w=2200&q=90",
@@ -458,18 +617,18 @@
       "id": "rebels-ahsoka",
       "group": "rebels",
       "eyebrow": "Star Wars Rebels · Archivo prioritario 1 de 2",
-      "title": "Ahsoka descubre a Vader",
+      "title": "Ahsoka contra Vader",
       "year": "4—1 ABY",
       "era": "La agente Fulcrum",
       "paragraphs": [
-        "Ahsoka opera para Bail Organa bajo el nombre Fulcrum, coordinando información y suministros sin revelar su identidad. Cuando se presenta ante la tripulación del Fantasma ya no actúa como Jedi, sino como una dirigente independiente. Al entrar en contacto con Vader a través de la Fuerza percibe algo familiar y aterrador: Anakin no murió como ella había creído.",
-        "En el templo Sith de Malachor, Ahsoka rompe parte de la máscara de Vader y confirma la verdad. Se niega a abandonarlo otra vez y combate mientras el templo colapsa. Años después, Ezra la extrae de ese instante mediante el Mundo entre Mundos, salvándola sin cambiar el sacrificio de Kanan. Ahsoka vuelve a Malachor y, tras la liberación de Lothal, se reúne con Sabine para comenzar la búsqueda de Ezra."
+        "Ahsoka trabaja con Bail Organa bajo el nombre Fulcrum y enlaza células sin revelar su identidad. Cuando el Escuadrón Fénix se convierte en una amenaza visible, Vader interviene. Durante el ataque a Lothal, Ahsoka entra en contacto con él a través de la Fuerza y reconoce una presencia imposible: Anakin no murió como ella creía.",
+        "En el templo Sith de Malachor, Ahsoka se queda para que los demás escapen. Durante el duelo rompe la máscara de Vader y escucha por un instante la voz de Anakin. Promete no volver a abandonarlo, pero Vader ataca. El templo se derrumba; tiempo después, el Mundo entre Mundos la retira del golpe mortal y ella regresa a Malachor."
       ],
       "quote": "Ahsoka acepta que Anakin se convirtió en Vader, pero no permite que esa verdad destruya la persona que ella eligió ser.",
       "beats": [
-        "Identidad de Fulcrum",
-        "Duelo en Malachor",
-        "Mundo entre Mundos"
+        "Fulcrum",
+        "Contacto en Lothal",
+        "La máscara rota"
       ],
       "color": "#ff9eff",
       "image": "https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?auto=format&fit=crop&w=2200&q=90",
@@ -484,8 +643,8 @@
       "year": "4—0 ABY",
       "era": "Un veterano elige la Rebelión",
       "paragraphs": [
-        "Rex vive retirado en Seelos con Wolffe y Gregor, cazando joopas desde un AT-TE modificado. Ahsoka envía al Fantasma para buscar su conocimiento militar. Kanan desconfía de todos los clones porque perdió a su maestro durante la Orden 66, pero Rex explica que retiró su chip y demuestra con sus decisiones que no sirve al Imperio.",
-        "Después de ayudar a los rebeldes contra el agente Kallus y varios caminantes imperiales, Rex deja el retiro. Su reencuentro con Ahsoka confirma que ambos sobrevivieron y conservaron su amistad. Pasa a entrenar y combatir junto a la Alianza, participa en la campaña final por Lothal y continúa luchando hasta la Batalla de Endor, usando la libertad que Fives y Ahsoka ayudaron a devolverle."
+        "Rex vive retirado en Seelos con Wolffe y Gregor, dentro de un AT-TE modificado. Ahsoka envía al Fantasma para buscar su experiencia militar. Kanan desconfía de los clones por la Orden 66, pero Rex explica que Ahsoka le retiró el chip después de que lo obligara a atacarla. Frente al agente Kallus y sus AT-AT, demuestra que ya no sirve a ningún imperio.",
+        "Rex abandona el retiro, se reúne con Ahsoka y aporta tácticas, entrenamiento y memoria de una guerra que pocos comprenden. También ayuda a Kanan a separar a los clones de la programación que los esclavizó. Combate con el Escuadrón Fénix, participa en la liberación de Lothal y sirve a la Alianza hasta la Batalla de Endor."
       ],
       "quote": "Rex fue creado para obedecer a la República, pero termina escogiendo por sí mismo defender la libertad.",
       "beats": [
@@ -497,6 +656,48 @@
       "image": "https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?auto=format&fit=crop&w=2200&q=90",
       "glyph": "RΞ",
       "focus": "REX"
+    },
+    {
+      "id": "rogue-one-galen",
+      "group": "rogue-one",
+      "eyebrow": "Rogue One · Parte 1 de 2",
+      "title": "Galen Erso sabotea la Estrella de la Muerte",
+      "year": "13—0 ABY",
+      "era": "El ingeniero atrapado dentro del proyecto Stardust",
+      "paragraphs": [
+        "Galen Erso era un científico experto en cristales kyber. Orson Krennic convirtió su investigación energética en el superláser de la Estrella de la Muerte y, después de que Galen intentara huir, lo obligó a terminar el reactor. Sin posibilidad de abandonar el proyecto, Galen fingió obediencia y ocultó una falla deliberada: una explosión precisa podía iniciar una reacción en cadena y destruir toda la estación.",
+        "Para que la Alianza encontrara esa debilidad, Galen confió un mensaje al piloto imperial Bodhi Rook y lo envió ante Saw Gerrera. Jyn, hija de Galen, vio la grabación en Jedha y comprendió que los planos completos estaban archivados en Scarif con el nombre Stardust. Aunque el Consejo Rebelde rechazó un ataque, Jyn, Cassian y un pequeño grupo partieron por su cuenta como Rogue One."
+      ],
+      "quote": "Galen construyó el arma por la fuerza, pero escondió dentro de ella la posibilidad de destruirla.",
+      "beats": [
+        "Krennic obliga a Galen",
+        "Falla dentro del reactor",
+        "Bodhi lleva el mensaje"
+      ],
+      "color": "#f0a65e",
+      "image": "https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?auto=format&fit=crop&w=2200&q=90",
+      "glyph": "RO"
+    },
+    {
+      "id": "rogue-one-leia",
+      "group": "rogue-one",
+      "eyebrow": "Rogue One · Parte 2 de 2",
+      "title": "De Scarif a las manos de Leia",
+      "year": "0 ABY",
+      "era": "La misión que abre el Episodio IV",
+      "paragraphs": [
+        "Rogue One infiltró el archivo imperial de Scarif. Jyn y Cassian recuperaron el proyecto Stardust mientras la flota rebelde, impulsada por el almirante Raddus, abrió el escudo planetario. Desde la torre, transmitieron los planos a la nave Profundity segundos antes de que la Estrella de la Muerte atacara la base. El equipo murió, pero su información sobrevivió.",
+        "La Profundity copió los datos en una tarjeta y los rebeldes intentaron llevarla hasta la Tantive IV, que estaba acoplada dentro de la nave. Vader abordó el buque y atravesó el corredor, pero un soldado consiguió pasar la tarjeta por una puerta bloqueada. La Tantive IV escapó; Leia recibió los planos y partió para buscar a Obi-Wan en Tatooine. Minutos después comienza Una nueva esperanza."
+      ],
+      "quote": "Leia no roba los planos en persona: recibe el resultado de una cadena de sacrificios iniciada por Galen y completada en Scarif.",
+      "beats": [
+        "Jyn transmite Stardust",
+        "Vader aborda la Profundity",
+        "Leia recibe los planos"
+      ],
+      "color": "#ffc06d",
+      "image": "https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?auto=format&fit=crop&w=2200&q=90",
+      "glyph": "LEIA"
     },
     {
       "id": "ep4-droides",

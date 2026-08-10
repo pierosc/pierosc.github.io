@@ -2,7 +2,7 @@
 
 Ruta principal: `/star-wars`
 
-Experiencia web cinematográfica de 29 archivos narrativos que explica los Episodios I al VI e integra *The Clone Wars*, *Obi-Wan Kenobi* y *Star Wars Rebels* en una sola línea temporal. Rex y Ahsoka cuentan con archivos prioritarios dedicados a sus historias.
+Experiencia web cinematográfica de 38 archivos narrativos que explica los Episodios I al VI e integra *The Clone Wars*, *Obi-Wan Kenobi*, el ascenso del Imperio, *Star Wars Rebels* y *Rogue One* en una sola línea temporal. La versión ampliada desarrolla la organización del ejército clon, Satine y Obi-Wan, la conquista de Mandalore por Maul, el entrenamiento y la supervivencia de Ahsoka, Rex, el Inquisitorius, los planes de Palpatine, la creación de la Alianza Rebelde y el recorrido de los planos de la Estrella de la Muerte hasta Leia.
 
 ## Controles
 
