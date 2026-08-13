@@ -131,33 +131,26 @@
           "text": "La Federación sella la habitación y libera gas venenoso. Los Jedi sobreviven, encienden sus sables y avanzan entre los droides de batalla."
         },
         {
-          "image": "/images/episode-i/sequence/lightsaber-hilt.png",
-          "imageFit": "contain",
-          "eyebrow": "06 · La ruptura",
-          "title": "La diplomacia termina",
-          "text": "Cuando las puertas se cierran, la Fuerza y los sables sustituyen a las palabras. La verdadera escala de la invasión queda expuesta."
-        },
-        {
           "image": "/images/episode-i/sequence/jar-jar-first-contact.jpg",
-          "eyebrow": "07 · El bosque",
+          "eyebrow": "06 · El bosque",
           "title": "Un encuentro improbable",
           "text": "En la superficie, los Jedi conocen a Jar Jar Binks. El gungan que parece un accidente terminará guiándolos hacia la única ruta segura."
         },
         {
           "image": "/images/episode-i/sequence/jar-jar-submarine.jpg",
-          "eyebrow": "08 · El descenso",
+          "eyebrow": "07 · El descenso",
           "title": "Camino bajo el agua",
           "text": "Jar Jar conduce a Qui-Gon y Obi-Wan por el núcleo del planeta. Su viaje conecta la invasión de la superficie con el pueblo gungan."
         },
         {
           "image": "/images/episode-i/sequence/otoh-gunga.jpeg",
-          "eyebrow": "09 · Otoh Gunga",
+          "eyebrow": "08 · Otoh Gunga",
           "title": "La ciudad sumergida",
           "text": "Bajo los lagos de Naboo aparece Otoh Gunga: una civilización aislada de Theed, pero amenazada por el mismo ejército invasor."
         },
         {
           "image": "/images/episode-i/sequence/boss-nass.jpeg",
-          "eyebrow": "10 · El pacto",
+          "eyebrow": "09 · El pacto",
           "title": "Boss Nass abre el camino",
           "text": "El líder gungan entrega a los Jedi un transporte y permite que Jar Jar los acompañe. Dos pueblos separados empiezan a compartir un destino."
         }

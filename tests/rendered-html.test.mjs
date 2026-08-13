@@ -73,7 +73,8 @@ test("renderiza la experiencia cinematográfica", async () => {
   assert.match(html, /Dioxis en la sala/i);
   assert.match(html, /Otoh Gunga/i);
   assert.match(html, /Boss Nass abre el camino/i);
-  assert.match(html, /lightsaber-hilt\.png/i);
+  assert.match(html, /lightsaber-hilt-clean\.png/i);
+  assert.doesNotMatch(html, /La diplomacia termina/i);
   assert.match(html, /lightsaber-rail/i);
   assert.doesNotMatch(html, /planet-ring/i);
   assert.doesNotMatch(html, /codex-preview|loading skeleton|react-loading-skeleton/i);

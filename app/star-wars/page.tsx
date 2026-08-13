@@ -371,7 +371,9 @@ export default function Home() {
           <div className="chapter-layout">
             <div className="chapter-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</div>
             <article className={`chapter-card ${chapter.storyPanels?.length ? "has-sequence" : ""}`}>
-              <span className="lightsaber-rail" aria-hidden="true" />
+              <span className="lightsaber-rail" aria-hidden="true">
+                <Image className="lightsaber-hilt-image" src="/images/ui/lightsaber-hilt-clean.png" alt="" width={120} height={120} unoptimized />
+              </span>
               <div className="chapter-meta"><span>{chapter.eyebrow}</span><b>{chapter.year}</b></div>
               {chapter.focus && <p className="detail-badge"><span>{site.priorityLabel}</span> {chapter.focus}</p>}
               <p className="era">{chapter.era}</p>
