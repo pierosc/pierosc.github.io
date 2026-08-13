@@ -280,11 +280,18 @@ export default function Home() {
           <div className="scene-image" style={{ backgroundImage: `linear-gradient(90deg, rgba(2,3,9,.98) 0%, rgba(2,3,9,.78) 42%, rgba(2,3,9,.12) 75%, rgba(2,3,9,.66) 100%), url('${chapter.image}')`, backgroundPosition: chapter.imagePosition ?? "center" }} aria-hidden="true" />
           <div className="scene-vignette" aria-hidden="true" />
           <div className="planet-system" aria-hidden="true">
-            <div className="planet"><span>{chapter.glyph}</span></div><div className="planet-ring" /><i className="moon moon-a" /><i className="moon moon-b" />
+            <div
+              className={`planet ${chapter.planetImage ? "has-image" : ""}`}
+              style={chapter.planetImage ? { backgroundImage: `url('${chapter.planetImage}')` } : undefined}
+            >
+              <span>{chapter.glyph}</span>
+            </div>
+            <i className="moon moon-a" /><i className="moon moon-b" />
           </div>
           <div className="chapter-layout">
             <div className="chapter-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</div>
             <article className="chapter-card">
+              <span className="lightsaber-rail" aria-hidden="true" />
               <div className="chapter-meta"><span>{chapter.eyebrow}</span><b>{chapter.year}</b></div>
               {chapter.focus && <p className="detail-badge"><span>{site.priorityLabel}</span> {chapter.focus}</p>}
               <p className="era">{chapter.era}</p>

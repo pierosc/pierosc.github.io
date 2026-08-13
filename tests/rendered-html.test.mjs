@@ -66,6 +66,11 @@ test("renderiza la experiencia cinematográfica", async () => {
   assert.match(html, /Galen Erso sabotea la Estrella de la Muerte/i);
   assert.match(html, /De Scarif a las manos de Leia/i);
   assert.match(html, /La Orden 66/i);
+  assert.match(html, /trade-federation-battleship\.webp/i);
+  assert.match(html, /trade-federation-council\.jpg/i);
+  assert.match(html, /naboo\.webp/i);
+  assert.match(html, /lightsaber-rail/i);
+  assert.doesNotMatch(html, /planet-ring/i);
   assert.doesNotMatch(html, /codex-preview|loading skeleton|react-loading-skeleton/i);
 });
 

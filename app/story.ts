@@ -13,6 +13,7 @@ export type StoryScene = {
   color: string;
   image: string;
   imagePosition?: string;
+  planetImage?: string;
   glyph: string;
   focus?: "REX" | "AHSOKA" | "REX + AHSOKA";
 };
