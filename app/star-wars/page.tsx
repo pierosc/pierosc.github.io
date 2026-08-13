@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { chapters, majorChapters, site } from "../story";
+import Image from "next/image";
+import { chapters, majorChapters, site, type StoryPanel } from "../story";
 
 const INITIAL_VOLUME = 0.55;
 
@@ -73,6 +74,85 @@ function Starfield({ warp }: { warp: boolean }) {
   }, [warp]);
 
   return <canvas className="starfield" ref={canvasRef} aria-hidden="true" />;
+}
+
+function StorySequence({
+  panels,
+  chapterTitle,
+  isActive,
+}: {
+  panels: StoryPanel[];
+  chapterTitle: string;
+  isActive: boolean;
+}) {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [currentPanel, setCurrentPanel] = useState(0);
+
+  useEffect(() => {
+    if (!isActive) return;
+    trackRef.current?.scrollTo({ left: 0, behavior: "auto" });
+  }, [isActive]);
+
+  const goToPanel = (index: number) => {
+    const nextPanel = Math.max(0, Math.min(index, panels.length - 1));
+    const track = trackRef.current;
+    const target = track?.children[nextPanel] as HTMLElement | undefined;
+    if (!track || !target) return;
+    track.scrollTo({ left: target.offsetLeft, behavior: "smooth" });
+    setCurrentPanel(nextPanel);
+  };
+
+  const updateCurrentPanel = () => {
+    const track = trackRef.current;
+    if (!track) return;
+    const panelElements = Array.from(track.children) as HTMLElement[];
+    const closest = panelElements.reduce(
+      (best, panel, index) => {
+        const distance = Math.abs(panel.offsetLeft - track.scrollLeft);
+        return distance < best.distance ? { index, distance } : best;
+      },
+      { index: 0, distance: Number.POSITIVE_INFINITY },
+    );
+    setCurrentPanel(closest.index);
+  };
+
+  return (
+    <section className="story-sequence" aria-label={`Secuencia visual de ${chapterTitle}`}>
+      <div className="story-sequence-head">
+        <div>
+          <span>SECUENCIA VISUAL</span>
+          <p>Desliza la historia hacia la derecha</p>
+        </div>
+        <div className="story-sequence-controls">
+          <output aria-live="polite">{String(currentPanel + 1).padStart(2, "0")} / {String(panels.length).padStart(2, "0")}</output>
+          <button type="button" onClick={() => goToPanel(currentPanel - 1)} disabled={currentPanel === 0} aria-label="Momento anterior">←</button>
+          <button type="button" onClick={() => goToPanel(currentPanel + 1)} disabled={currentPanel === panels.length - 1} aria-label="Momento siguiente">→</button>
+        </div>
+      </div>
+      <div className="story-sequence-track" ref={trackRef} onScroll={updateCurrentPanel}>
+        {panels.map((panel, panelIndex) => (
+          <figure className="story-panel" key={`${panel.title}-${panelIndex}`}>
+            <div className="story-panel-image">
+              <Image
+                src={panel.image}
+                alt={panel.title}
+                fill
+                sizes="(max-width: 620px) 84vw, 290px"
+                unoptimized
+                style={{ objectPosition: panel.imagePosition ?? "center", objectFit: panel.imageFit ?? "cover" }}
+              />
+              <span>{String(panelIndex + 1).padStart(2, "0")}</span>
+            </div>
+            <figcaption>
+              <p className="story-panel-eyebrow">{panel.eyebrow}</p>
+              <h3>{panel.title}</h3>
+              <p>{panel.text}</p>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export default function Home() {
@@ -290,13 +370,23 @@ export default function Home() {
           </div>
           <div className="chapter-layout">
             <div className="chapter-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</div>
-            <article className="chapter-card">
+            <article className={`chapter-card ${chapter.storyPanels?.length ? "has-sequence" : ""}`}>
               <span className="lightsaber-rail" aria-hidden="true" />
               <div className="chapter-meta"><span>{chapter.eyebrow}</span><b>{chapter.year}</b></div>
               {chapter.focus && <p className="detail-badge"><span>{site.priorityLabel}</span> {chapter.focus}</p>}
               <p className="era">{chapter.era}</p>
               <h2>{chapter.title}</h2>
-              <div className="story-text">{chapter.paragraphs.map((paragraph, paragraphIndex) => <p key={paragraphIndex}>{paragraph}</p>)}</div>
+              {chapter.storyPanels?.length ? (
+                <>
+                  <StorySequence panels={chapter.storyPanels} chapterTitle={chapter.title} isActive={active === index + 1} />
+                  <details className="chapter-summary">
+                    <summary>Leer el relato completo</summary>
+                    <div className="story-text">{chapter.paragraphs.map((paragraph, paragraphIndex) => <p key={paragraphIndex}>{paragraph}</p>)}</div>
+                  </details>
+                </>
+              ) : (
+                <div className="story-text">{chapter.paragraphs.map((paragraph, paragraphIndex) => <p key={paragraphIndex}>{paragraph}</p>)}</div>
+              )}
               <blockquote>“{chapter.quote}”</blockquote>
               <div className="beats">{chapter.beats.map((beat, beatIndex) => <div key={beat}><span>{String(beatIndex + 1).padStart(2, "0")}</span><p>{beat}</p></div>)}</div>
             </article>

@@ -97,9 +97,71 @@
         "La mano oculta de Sidious"
       ],
       "color": "#f3ca52",
-      "image": "/images/episode-i/trade-federation-battleship.webp",
-      "imagePosition": "center",
+      "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=2200&q=90",
       "planetImage": "/images/episode-i/naboo.webp",
+      "storyPanels": [
+        {
+          "image": "/images/episode-i/trade-federation-battleship.webp",
+          "eyebrow": "01 · El bloqueo",
+          "title": "La Federación cierra el cielo",
+          "text": "Naves de guerra rodean Naboo. La protesta contra los impuestos es la excusa visible para una ocupación preparada desde las sombras."
+        },
+        {
+          "image": "/images/episode-i/trade-federation-council.jpg",
+          "eyebrow": "02 · La crisis",
+          "title": "El miedo detrás de la invasión",
+          "text": "Nute Gunray y Rune Haako saben que el bloqueo ya no es una negociación comercial: ahora obedecen a un amo que no pueden desafiar."
+        },
+        {
+          "image": "/images/episode-i/sequence/sidious-hologram.jpg",
+          "eyebrow": "03 · La orden",
+          "title": "Sidious mueve las piezas",
+          "text": "El Lord Sith exige ocupar Naboo y eliminar a los enviados de la República. La crisis política se convierte en el primer paso de su plan."
+        },
+        {
+          "image": "/images/episode-i/sequence/qui-gon-obi-wan.jpg",
+          "eyebrow": "04 · Los embajadores",
+          "title": "Dos Jedi entran en la trampa",
+          "text": "Qui-Gon Jinn y Obi-Wan Kenobi llegan esperando negociar. El silencio de sus anfitriones les revela que la misión diplomática ha terminado antes de comenzar."
+        },
+        {
+          "image": "/images/episode-i/sequence/dioxis.webp",
+          "eyebrow": "05 · El atentado",
+          "title": "Dioxis en la sala",
+          "text": "La Federación sella la habitación y libera gas venenoso. Los Jedi sobreviven, encienden sus sables y avanzan entre los droides de batalla."
+        },
+        {
+          "image": "/images/episode-i/sequence/lightsaber-hilt.png",
+          "imageFit": "contain",
+          "eyebrow": "06 · La ruptura",
+          "title": "La diplomacia termina",
+          "text": "Cuando las puertas se cierran, la Fuerza y los sables sustituyen a las palabras. La verdadera escala de la invasión queda expuesta."
+        },
+        {
+          "image": "/images/episode-i/sequence/jar-jar-first-contact.jpg",
+          "eyebrow": "07 · El bosque",
+          "title": "Un encuentro improbable",
+          "text": "En la superficie, los Jedi conocen a Jar Jar Binks. El gungan que parece un accidente terminará guiándolos hacia la única ruta segura."
+        },
+        {
+          "image": "/images/episode-i/sequence/jar-jar-submarine.jpg",
+          "eyebrow": "08 · El descenso",
+          "title": "Camino bajo el agua",
+          "text": "Jar Jar conduce a Qui-Gon y Obi-Wan por el núcleo del planeta. Su viaje conecta la invasión de la superficie con el pueblo gungan."
+        },
+        {
+          "image": "/images/episode-i/sequence/otoh-gunga.jpeg",
+          "eyebrow": "09 · Otoh Gunga",
+          "title": "La ciudad sumergida",
+          "text": "Bajo los lagos de Naboo aparece Otoh Gunga: una civilización aislada de Theed, pero amenazada por el mismo ejército invasor."
+        },
+        {
+          "image": "/images/episode-i/sequence/boss-nass.jpeg",
+          "eyebrow": "10 · El pacto",
+          "title": "Boss Nass abre el camino",
+          "text": "El líder gungan entrega a los Jedi un transporte y permite que Jar Jar los acompañe. Dos pueblos separados empiezan a compartir un destino."
+        }
+      ],
       "glyph": "I"
     },
     {
@@ -142,8 +204,7 @@
         "Palpatine es canciller"
       ],
       "color": "#f3ca52",
-      "image": "/images/episode-i/trade-federation-council.jpg",
-      "imagePosition": "right center",
+      "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=2200&q=90",
       "planetImage": "/images/episode-i/naboo.webp",
       "glyph": "I"
     },

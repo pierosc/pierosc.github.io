@@ -69,6 +69,11 @@ test("renderiza la experiencia cinematográfica", async () => {
   assert.match(html, /trade-federation-battleship\.webp/i);
   assert.match(html, /trade-federation-council\.jpg/i);
   assert.match(html, /naboo\.webp/i);
+  assert.match(html, /Secuencia visual/i);
+  assert.match(html, /Dioxis en la sala/i);
+  assert.match(html, /Otoh Gunga/i);
+  assert.match(html, /Boss Nass abre el camino/i);
+  assert.match(html, /lightsaber-hilt\.png/i);
   assert.match(html, /lightsaber-rail/i);
   assert.doesNotMatch(html, /planet-ring/i);
   assert.doesNotMatch(html, /codex-preview|loading skeleton|react-loading-skeleton/i);

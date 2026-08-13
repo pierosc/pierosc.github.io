@@ -1,5 +1,14 @@
 import story from "./story.json";
 
+export type StoryPanel = {
+  image: string;
+  imagePosition?: string;
+  imageFit?: "cover" | "contain";
+  eyebrow: string;
+  title: string;
+  text: string;
+};
+
 export type StoryScene = {
   id: string;
   group: string;
@@ -14,6 +23,7 @@ export type StoryScene = {
   image: string;
   imagePosition?: string;
   planetImage?: string;
+  storyPanels?: StoryPanel[];
   glyph: string;
   focus?: "REX" | "AHSOKA" | "REX + AHSOKA";
 };
