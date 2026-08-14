@@ -133,14 +133,22 @@ function StorySequence({
         {panels.map((panel, panelIndex) => (
           <figure className="story-panel" key={`${panel.title}-${panelIndex}`}>
             <div className="story-panel-image">
-              <Image
-                src={panel.image}
-                alt={panel.title}
-                fill
-                sizes="(max-width: 620px) 84vw, 290px"
-                unoptimized
-                style={{ objectPosition: panel.imagePosition ?? "center", objectFit: panel.imageFit ?? "cover" }}
-              />
+              {panel.image ? (
+                <Image
+                  src={panel.image}
+                  alt={panel.title}
+                  fill
+                  sizes="(max-width: 620px) 100vw, 500px"
+                  unoptimized
+                  style={{ objectPosition: panel.imagePosition ?? "center", objectFit: panel.imageFit ?? "cover" }}
+                />
+              ) : (
+                <div className="story-image-placeholder" role="img" aria-label={panel.imageSuggestion}>
+                  <span>IMAGEN PENDIENTE</span>
+                  <strong>{panel.imageSuggestion}</strong>
+                  <small>Esta será la próxima escena que reemplazaremos</small>
+                </div>
+              )}
               <span>{String(panelIndex + 1).padStart(2, "0")}</span>
             </div>
             <figcaption>
