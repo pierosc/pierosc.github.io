@@ -1,0 +1,187 @@
+{
+  "ep1-tatooine": [
+    "Anakin Skywalker Boonta Eve podrace The Phantom Menace",
+    "Qui-Gon tells Anakin he is free The Phantom Menace",
+    "Anakin says goodbye to Shmi Skywalker The Phantom Menace"
+  ],
+  "ep1-final": [
+    "Queen Amidala Boss Nass alliance The Phantom Menace",
+    "Qui-Gon Obi-Wan Darth Maul Duel of the Fates",
+    "Palpatine elected Supreme Chancellor Galactic Senate The Phantom Menace"
+  ],
+  "ep2-kamino": [
+    "Obi-Wan discovers Kamino missing Jedi archives Attack of the Clones",
+    "Jango Fett clone army Kamino Attack of the Clones",
+    "Obi-Wan chases Jango Fett from Kamino to Geonosis"
+  ],
+  "ep2-anakin": [
+    "Anakin Padme meadow Naboo Attack of the Clones",
+    "Anakin holds dying Shmi Skywalker Attack of the Clones",
+    "Anakin attacks Tusken Raider camp Attack of the Clones"
+  ],
+  "ep2-geonosis": [
+    "Anakin Padme Obi-Wan chained Geonosis arena",
+    "clone army arrives Geonosis battle Attack of the Clones",
+    "Anakin Padme secret wedding Naboo Attack of the Clones"
+  ],
+  "cw-clone-army": [
+    "Anakin Captain Rex 501st Legion Clone Wars battle",
+    "Obi-Wan Commander Cody 212th Battalion Clone Wars",
+    "Ahsoka Rex 332nd Company painted helmets"
+  ],
+  "cw-satine": [
+    "Obi-Wan protects Duchess Satine Mandalore Clone Wars",
+    "Obi-Wan Satine alone talking Clone Wars",
+    "Duchess Satine Death Watch Mandalore neutrality"
+  ],
+  "cw-maul-mandalore": [
+    "Darth Maul Shadow Collective Clone Wars",
+    "Maul fights Pre Vizsla Darksaber Mandalore",
+    "Maul kills Satine Obi-Wan Sidious Mandalore"
+  ],
+  "cw-rex": [
+    "Captain Rex defies General Krell Umbara",
+    "Fives tells Rex inhibitor chip conspiracy",
+    "Captain Rex doubts orders inhibitor chip Clone Wars"
+  ],
+  "cw-ahsoka-training": [
+    "Ahsoka training remotes Jedi Temple Tales of the Jedi",
+    "Rex 501st firing stun bolts at Ahsoka training",
+    "Ahsoka surrounded by clone troopers training Order 66"
+  ],
+  "cw-ahsoka": [
+    "Ahsoka commanding 501st Legion Clone Wars",
+    "Ahsoka accused Jedi Council Temple bombing",
+    "Ahsoka walks away from Anakin leaves Jedi Order"
+  ],
+  "cw-siege-mandalore": [
+    "Ahsoka Rex 332nd Company Siege of Mandalore",
+    "Maul offers Ahsoka alliance throne room Mandalore",
+    "Ahsoka Maul duel Sundari Mandalore"
+  ],
+  "cw-order66": [
+    "Captain Rex resists Order 66 says Fives Ahsoka",
+    "Ahsoka removes Rex inhibitor chip",
+    "Ahsoka Rex clone graves 332nd Order 66"
+  ],
+  "ep3-coruscant": [
+    "Anakin executes Count Dooku Palpatine Revenge of the Sith",
+    "Anakin Obi-Wan rescue Palpatine Invisible Hand",
+    "Jedi Council distrusts Anakin Revenge of the Sith"
+  ],
+  "ep3-miedo": [
+    "Anakin nightmare Padme death Revenge of the Sith",
+    "Palpatine tells Anakin tragedy Darth Plagueis opera",
+    "Anakin Mace Windu Palpatine office confrontation"
+  ],
+  "ep3-orden66": [
+    "Anakin 501st march Jedi Temple Order 66",
+    "clone troopers betray Jedi Order 66 montage",
+    "Palpatine declares Galactic Empire Senate Revenge of the Sith"
+  ],
+  "ep3-mustafar": [
+    "Obi-Wan Anakin duel lava Mustafar Revenge of the Sith",
+    "Padme newborn Luke Leia Revenge of the Sith",
+    "Darth Vader receives armor mask Revenge of the Sith"
+  ],
+  "ow-inquisitorius": [
+    "Imperial Inquisitors red lightsabers Obi-Wan Kenobi series",
+    "Grand Inquisitor Darth Vader orders",
+    "Inquisitors threaten civilians lure Jedi Obi-Wan Kenobi"
+  ],
+  "ow-reva": [
+    "young Reva Jedi Temple Order 66 flashback",
+    "Reva kidnaps young Leia Obi-Wan Kenobi",
+    "Darth Vader defeats Reva knows her betrayal"
+  ],
+  "ow-vader": [
+    "Darth Vader drags Obi-Wan through fire Mapuzo",
+    "Obi-Wan breaks Vader mask duel Kenobi finale",
+    "Obi-Wan walks away from defeated Vader Kenobi finale"
+  ],
+  "empire-palpatine": [
+    "Palpatine Senate applause formation Galactic Empire",
+    "Darth Vader Imperial Inquisitors together",
+    "Palpatine Death Star cloning experiments Exegol"
+  ],
+  "empire-stormtroopers": [
+    "TK trooper recruits Project War Mantle Bad Batch",
+    "Empire destroys Kamino Tipoca City Bad Batch",
+    "clone troopers replaced by stormtroopers Bad Batch"
+  ],
+  "empire-necromancer": [
+    "Imperial scientists M-count experiments Project Necromancer",
+    "Omega Mount Tantiss laboratory Bad Batch",
+    "Palpatine cloning tanks Project Necromancer Exegol"
+  ],
+  "rebels-alliance": [
+    "Bail Organa Mon Mothma secret rebellion",
+    "Ahsoka Fulcrum hologram Rebel cells",
+    "Mon Mothma Dantooine declaration Rebel Alliance"
+  ],
+  "rebels-ahsoka": [
+    "Ahsoka Tano Fulcrum Star Wars Rebels",
+    "Ahsoka meets Ghost crew Lothal Rebels",
+    "Ahsoka breaks Vader mask Malachor duel"
+  ],
+  "rebels-rex": [
+    "Captain Rex Wolffe Gregor Seelos walker",
+    "Rex reunites with Ahsoka Star Wars Rebels",
+    "Captain Rex fights for Rebel Alliance Endor"
+  ],
+  "rogue-one-galen": [
+    "Krennic forces Galen Erso return Rogue One",
+    "Galen Erso designs Death Star reactor flaw",
+    "Bodhi Rook carries Galen message Saw Gerrera"
+  ],
+  "rogue-one-leia": [
+    "Jyn Erso transmits Death Star plans Scarif tower",
+    "Darth Vader hallway Profundity Rogue One",
+    "Princess Leia receives Death Star plans Tantive IV Rogue One"
+  ],
+  "ep4-droides": [
+    "R2-D2 escapes Death Star plans Tatooine desert",
+    "Obi-Wan gives Luke Anakin lightsaber A New Hope",
+    "Luke sees burned Lars homestead Owen Beru"
+  ],
+  "ep4-estrella": [
+    "Leia watches Alderaan destroyed Death Star",
+    "Luke Han Chewbacca rescue Leia detention block",
+    "Obi-Wan fights Darth Vader Death Star A New Hope"
+  ],
+  "ep4-yavin": [
+    "Rebel X-wings Death Star trench run",
+    "Millennium Falcon returns saves Luke Battle of Yavin",
+    "Luke fires proton torpedoes destroys Death Star"
+  ],
+  "ep5-hoth": [
+    "AT-AT assault Echo Base Hoth Empire Strikes Back",
+    "Leia coordinates Echo Base evacuation Hoth",
+    "Rebel fleet disperses Imperial pursuit Empire Strikes Back"
+  ],
+  "ep5-dagobah": [
+    "Yoda trains Luke Dagobah swamp",
+    "Luke dark side cave Vader vision Dagobah",
+    "Luke leaves Dagobah X-wing Yoda warning"
+  ],
+  "ep5-bespin": [
+    "Lando betrays Han Leia Darth Vader Cloud City dinner",
+    "Han Solo frozen carbonite Bespin",
+    "Darth Vader tells Luke I am your father Bespin"
+  ],
+  "ep6-jabba": [
+    "Luke Skywalker black robes Jabba palace Return of the Jedi",
+    "Luke Leia Han sail barge Sarlacc battle",
+    "Han Solo rescued reunited friends Tatooine"
+  ],
+  "ep6-endor": [
+    "Yoda final lesson Luke Dagobah Return of the Jedi",
+    "Leia Rebels Ewoks alliance Endor",
+    "Luke surrenders Darth Vader Endor landing platform"
+  ],
+  "ep6-redencion": [
+    "Luke throws lightsaber refuses Emperor throne room",
+    "Darth Vader lifts Emperor saves Luke",
+    "Endor celebration Anakin Force ghost Return of the Jedi"
+  ]
+}

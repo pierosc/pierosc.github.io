@@ -1,5 +1,6 @@
 import story from "./story.json";
 import { imageSuggestions } from "./image-suggestions";
+import storyImageManifest from "./story-image-manifest.json";
 
 export type StoryPanel = {
   image?: string;
@@ -51,11 +52,13 @@ function splitNarrative(paragraphs: string[], panelCount: number) {
 function buildPendingPanels(chapter: StoryScene): StoryPanel[] {
   const narrativeParts = splitNarrative(chapter.paragraphs, chapter.beats.length);
   const suggestions = imageSuggestions[chapter.id] ?? [];
+  const images = (storyImageManifest as Record<string, Array<string | null>>)[chapter.id] ?? [];
 
   return chapter.beats.map((beat, index) => ({
     eyebrow: `${String(index + 1).padStart(2, "0")} · Archivo visual`,
     title: beat,
     text: narrativeParts[index],
+    image: images[index] ?? undefined,
     imageSuggestion: suggestions[index] ?? `Imagen de ${beat.toLocaleLowerCase("es")}.`,
   }));
 }

@@ -1,0 +1,187 @@
+{
+  "ep1-tatooine": [
+    "/images/story/ep1-tatooine/01.webp",
+    "/images/story/ep1-tatooine/02.webp",
+    "/images/story/ep1-tatooine/03.webp"
+  ],
+  "ep1-final": [
+    "/images/story/ep1-final/01.webp",
+    "/images/story/ep1-final/02.webp",
+    "/images/story/ep1-final/03.webp"
+  ],
+  "ep2-kamino": [
+    "/images/story/ep2-kamino/01.webp",
+    "/images/story/ep2-kamino/02.webp",
+    "/images/story/ep2-kamino/03.webp"
+  ],
+  "ep2-anakin": [
+    "/images/story/ep2-anakin/01.webp",
+    "/images/story/ep2-anakin/02.webp",
+    "/images/story/ep2-anakin/03.webp"
+  ],
+  "ep2-geonosis": [
+    "/images/story/ep2-geonosis/01.webp",
+    "/images/story/ep2-geonosis/02.webp",
+    "/images/story/ep2-geonosis/03.webp"
+  ],
+  "cw-clone-army": [
+    "/images/story/cw-clone-army/01.webp",
+    "/images/story/cw-clone-army/02.webp",
+    "/images/story/cw-clone-army/03.webp"
+  ],
+  "cw-satine": [
+    "/images/story/cw-satine/01.webp",
+    "/images/story/cw-satine/02.webp",
+    "/images/story/cw-satine/03.webp"
+  ],
+  "cw-maul-mandalore": [
+    "/images/story/cw-maul-mandalore/01.webp",
+    "/images/story/cw-maul-mandalore/02.webp",
+    "/images/story/cw-maul-mandalore/03.webp"
+  ],
+  "cw-rex": [
+    "/images/story/cw-rex/01.webp",
+    "/images/story/cw-rex/02.webp",
+    "/images/story/cw-rex/03.webp"
+  ],
+  "cw-ahsoka-training": [
+    "/images/story/cw-ahsoka-training/01.webp",
+    "/images/story/cw-ahsoka-training/02.webp",
+    "/images/story/cw-ahsoka-training/03.webp"
+  ],
+  "cw-ahsoka": [
+    "/images/story/cw-ahsoka/01.webp",
+    "/images/story/cw-ahsoka/02.webp",
+    "/images/story/cw-ahsoka/03.webp"
+  ],
+  "cw-siege-mandalore": [
+    "/images/story/cw-siege-mandalore/01.webp",
+    "/images/story/cw-siege-mandalore/02.webp",
+    "/images/story/cw-siege-mandalore/03.webp"
+  ],
+  "cw-order66": [
+    "/images/story/cw-order66/01.webp",
+    "/images/story/cw-order66/02.webp",
+    "/images/story/cw-order66/03.webp"
+  ],
+  "ep3-coruscant": [
+    "/images/story/ep3-coruscant/01.webp",
+    "/images/story/ep3-coruscant/02.webp",
+    "/images/story/ep3-coruscant/03.webp"
+  ],
+  "ep3-miedo": [
+    "/images/story/ep3-miedo/01.webp",
+    "/images/story/ep3-miedo/02.webp",
+    "/images/story/ep3-miedo/03.webp"
+  ],
+  "ep3-orden66": [
+    "/images/story/ep3-orden66/01.webp",
+    "/images/story/ep3-orden66/02.webp",
+    "/images/story/ep3-orden66/03.webp"
+  ],
+  "ep3-mustafar": [
+    "/images/story/ep3-mustafar/01.webp",
+    "/images/story/ep3-mustafar/02.webp",
+    "/images/story/ep3-mustafar/03.webp"
+  ],
+  "ow-inquisitorius": [
+    "/images/story/ow-inquisitorius/01.webp",
+    "/images/story/ow-inquisitorius/02.webp",
+    "/images/story/ow-inquisitorius/03.webp"
+  ],
+  "ow-reva": [
+    "/images/story/ow-reva/01.webp",
+    "/images/story/ow-reva/02.webp",
+    "/images/story/ow-reva/03.webp"
+  ],
+  "ow-vader": [
+    "/images/story/ow-vader/01.webp",
+    "/images/story/ow-vader/02.webp",
+    "/images/story/ow-vader/03.webp"
+  ],
+  "empire-palpatine": [
+    "/images/story/empire-palpatine/01.webp",
+    "/images/story/empire-palpatine/02.webp",
+    "/images/story/empire-palpatine/03.webp"
+  ],
+  "empire-stormtroopers": [
+    "/images/story/empire-stormtroopers/01.webp",
+    "/images/story/empire-stormtroopers/02.webp",
+    "/images/story/empire-stormtroopers/03.webp"
+  ],
+  "empire-necromancer": [
+    "/images/story/empire-necromancer/01.webp",
+    "/images/story/empire-necromancer/02.webp",
+    "/images/story/empire-necromancer/03.webp"
+  ],
+  "rebels-alliance": [
+    "/images/story/rebels-alliance/01.webp",
+    "/images/story/rebels-alliance/02.webp",
+    "/images/story/rebels-alliance/03.webp"
+  ],
+  "rebels-ahsoka": [
+    "/images/story/rebels-ahsoka/01.webp",
+    "/images/story/rebels-ahsoka/02.webp",
+    "/images/story/rebels-ahsoka/03.webp"
+  ],
+  "rebels-rex": [
+    "/images/story/rebels-rex/01.webp",
+    "/images/story/rebels-rex/02.webp",
+    "/images/story/rebels-rex/03.webp"
+  ],
+  "rogue-one-galen": [
+    "/images/story/rogue-one-galen/01.webp",
+    "/images/story/rogue-one-galen/02.webp",
+    "/images/story/rogue-one-galen/03.webp"
+  ],
+  "rogue-one-leia": [
+    "/images/story/rogue-one-leia/01.webp",
+    "/images/story/rogue-one-leia/02.webp",
+    "/images/story/rogue-one-leia/03.webp"
+  ],
+  "ep4-droides": [
+    "/images/story/ep4-droides/01.webp",
+    "/images/story/ep4-droides/02.webp",
+    "/images/story/ep4-droides/03.webp"
+  ],
+  "ep4-estrella": [
+    "/images/story/ep4-estrella/01.webp",
+    "/images/story/ep4-estrella/02.webp",
+    "/images/story/ep4-estrella/03.webp"
+  ],
+  "ep4-yavin": [
+    "/images/story/ep4-yavin/01.webp",
+    "/images/story/ep4-yavin/02.webp",
+    "/images/story/ep4-yavin/03.webp"
+  ],
+  "ep5-hoth": [
+    "/images/story/ep5-hoth/01.webp",
+    "/images/story/ep5-hoth/02.webp",
+    "/images/story/ep5-hoth/03.webp"
+  ],
+  "ep5-dagobah": [
+    "/images/story/ep5-dagobah/01.webp",
+    "/images/story/ep5-dagobah/02.webp",
+    "/images/story/ep5-dagobah/03.webp"
+  ],
+  "ep5-bespin": [
+    "/images/story/ep5-bespin/01.webp",
+    "/images/story/ep5-bespin/02.webp",
+    "/images/story/ep5-bespin/03.webp"
+  ],
+  "ep6-jabba": [
+    "/images/story/ep6-jabba/01.webp",
+    "/images/story/ep6-jabba/02.webp",
+    "/images/story/ep6-jabba/03.webp"
+  ],
+  "ep6-endor": [
+    "/images/story/ep6-endor/01.webp",
+    "/images/story/ep6-endor/02.webp",
+    "/images/story/ep6-endor/03.webp"
+  ],
+  "ep6-redencion": [
+    "/images/story/ep6-redencion/01.webp",
+    "/images/story/ep6-redencion/02.webp",
+    "/images/story/ep6-redencion/03.webp"
+  ]
+}

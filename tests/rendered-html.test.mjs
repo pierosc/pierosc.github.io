@@ -75,10 +75,10 @@ test("renderiza la experiencia cinematográfica", async () => {
   assert.match(html, /Boss Nass abre el camino/i);
   assert.match(html, /lightsaber-hilt-clean\.png/i);
   assert.doesNotMatch(html, /La diplomacia termina/i);
-  assert.equal((html.match(/IMAGEN PENDIENTE/g) ?? []).length, 111);
-  assert.match(html, /Imagen de Obi-Wan y Anakin luchando sobre la lava de Mustafar/i);
-  assert.match(html, /Imagen de Vader revelando a Luke que es su padre/i);
-  assert.match(html, /Imagen de Anakin levantando a Sidious para salvar a Luke/i);
+  assert.doesNotMatch(html, /IMAGEN PENDIENTE/i);
+  assert.match(html, /\/images\/story\/ep3-mustafar\/01\.webp/i);
+  assert.match(html, /\/images\/story\/ep5-bespin\/03\.webp/i);
+  assert.match(html, /\/images\/story\/ep6-redencion\/02\.webp/i);
   assert.match(html, /lightsaber-rail/i);
   assert.doesNotMatch(html, /planet-ring/i);
   assert.doesNotMatch(html, /codex-preview|loading skeleton|react-loading-skeleton/i);
